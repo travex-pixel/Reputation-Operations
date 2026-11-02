@@ -86,7 +86,7 @@ One authored moment (the activity feed). Supporting motion only for feedback and
 
 WCAG 2.2 AA. Verified with axe-core (0 violations on `/`, `/audit`, `/privacy` at 390 and 1440) and the Impeccable detector. Skip link, landmark `main`, one `h1` per page, labelled controls, keyboard-operable FAQ (`details/summary`), 44px targets on mobile, no horizontal overflow at 390.
 
-Detector exception: the hero carries the tracked uppercase label pinned by the redesign brief ("Sydney-based · Human-led reputation management"). The detector's `hero-eyebrow-chip` rule flags it at desktop width. It is kept deliberately as plain text, not a pill, and is the only such label on the site.
+Detector exception: the hero carries the tracked uppercase label pinned by the redesign brief ("Human-led reputation management · Australia-wide"). The detector's `hero-eyebrow-chip` rule flags it at desktop width. It is kept deliberately as plain text, not a pill, and is the only such label on the site.
 
 ## Workspace (Operate mode)
 

@@ -6,13 +6,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Reputrail — Managed reputation for Sydney trade businesses",
+    default: "Reputrail — Managed reputation for Australian trades and property managers",
     template: "%s · Reputrail",
   },
   description: site.description,
   applicationName: site.name,
   keywords: [
+    "reputation management Australia",
     "reputation management Sydney",
+    "property manager review management",
     "Google review response service",
     "review management for tradies",
     "trade business reviews",

@@ -37,7 +37,7 @@ export function Pricing() {
               <p className="mt-4 text-body text-ink-soft">{p.summary}</p>
               {featured ? (
                 <p className="mt-2 text-small text-accent">
-                  First three Sydney customers: {fmt(pilot.price)} {pilot.period}.
+                  First three customers: {fmt(pilot.price)} {pilot.period}.
                 </p>
               ) : null}
               <ul className="mt-6 grid gap-2.5 border-t rule pt-6 text-small text-ink-soft">
@@ -72,7 +72,7 @@ export function Pricing() {
         <div className="max-w-[36rem]">
           <h3 className="text-heading text-ink">{pilot.label}</h3>
           <p className="mt-2 text-body text-ink-soft">
-            For our first three Sydney customers: the Managed plan at {fmt(pilot.price)} {pilot.period}, no set-up fee, nothing
+            For our first three customers: the Managed plan at {fmt(pilot.price)} {pilot.period}, no set-up fee, nothing
             renewing automatically. Around day 25 we ask what you’d like to do next: continue at {fmt(managedPrice)} a month, or
             stop. Either way the audit and report are yours to keep.
           </p>

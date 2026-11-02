@@ -12,7 +12,7 @@ Next.js 16 (App Router, TypeScript, Server Components), Tailwind CSS v4, deploye
 
 ## Users
 
-Primary: owners of small Australian trade and home-service businesses (painters, plumbers, electricians, air-conditioning installers, renovators, roofers), mostly in Greater Sydney, typically 2–30 staff, owner still on the tools or running jobs. They read on a phone between jobs, in the ute, or at the kitchen table after 7pm. They are time-poor, sceptical of marketing agencies, proud of their work, and personally stung by unfair reviews.
+Primary: owners of small Australian trade and home-service businesses (painters, plumbers, electricians, air-conditioning installers, renovators, roofers) and property managers, anywhere in Australia with Sydney as the home base, typically 2–30 staff, owner still on the tools or running jobs. They read on a phone between jobs, in the ute, or at the kitchen table after 7pm. They are time-poor, sceptical of marketing agencies, proud of their work, and personally stung by unfair reviews.
 
 Secondary: office managers / partners who run the admin for the business; and referrers (accountants, suppliers, other tradies) who pass the site on.
 

@@ -9,7 +9,7 @@ export function WhoWeHelp() {
         <SectionHeading
           id="who-heading"
           title="Built for businesses where trust wins work."
-          lede="Sydney trades and home services. Work that customers can’t judge until it’s done, so they judge you first."
+          lede="Trades, home services and property managers across Australia. Work people can’t judge until it’s done, so they judge you first."
           className="lg:sticky lg:top-24 lg:self-start"
         />
         <ul className="grid border-t rule sm:grid-cols-2 sm:gap-x-10">

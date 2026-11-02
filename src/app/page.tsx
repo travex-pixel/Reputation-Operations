@@ -33,7 +33,7 @@ export default function HomePage() {
         description: site.description,
         url: site.url,
         email: site.email,
-        areaServed: { "@type": "City", name: "Sydney" },
+        areaServed: { "@type": "Country", name: "Australia" },
         address: { "@type": "PostalAddress", addressLocality: "Sydney", addressRegion: "NSW", addressCountry: "AU" },
         priceRange: "A$299–A$799 per month",
         slogan: site.tagline,

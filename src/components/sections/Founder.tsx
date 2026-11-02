@@ -16,7 +16,7 @@ export function Founder() {
             I started Reputrail because too many good tradespeople lose work to a page they never look at. The job was done well. The one complaint sat there unanswered, and the quote went to someone with a tidier listing.
           </p>
           <p>
-            I’m based in Sydney and I’d rather pick up the phone than send a ticket. If a review is bothering you, or you just want a second opinion, get in touch. The audit is free either way.
+            I’m based in Sydney, I work with businesses anywhere in Australia, and I’d rather pick up the phone than send a ticket. If a review is bothering you, or you just want a second opinion, get in touch. The audit is free either way.
           </p>
         </div>
         <p className="mt-8 text-small font-semibold text-ink">{signature}</p>

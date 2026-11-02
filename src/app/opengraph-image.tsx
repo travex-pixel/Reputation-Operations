@@ -41,7 +41,7 @@ export default async function OpenGraphImage() {
           <div>In good hands.</div>
         </div>
         <div style={{ fontSize: 30, color: "#5f5f5f", maxWidth: 900, lineHeight: 1.35 }}>
-          Human-led reputation management for Sydney trade businesses.
+          Human-led reputation management for Australian trades, home services and property managers.
         </div>
       </div>
 

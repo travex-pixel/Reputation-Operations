@@ -6,7 +6,7 @@ export const site = {
   name: "Reputrail",
   tagline: "Your reputation. In good hands.",
   description:
-    "Human-led reputation management for Sydney trade businesses. We look after your reviews, respond to customers and help resolve complaints before they cost you the next job.",
+    "Human-led reputation management for Australian trades, home services and property managers. We look after your reviews, respond to customers and help resolve complaints before they cost you the next job.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://reputrail.com.au",
   locale: "en-AU",
   region: "Sydney, NSW",
@@ -81,6 +81,7 @@ export const trades = [
   { name: "Builders and renovators", why: "Long jobs, big deposits, nervous clients." },
   { name: "Landscapers", why: "Finish is judged in photos; referrals are the pipeline." },
   { name: "Roofers and other home services", why: "Urgent, high-value work from people who check first." },
+  { name: "Property managers", why: "Tenants and landlords review the agency, and a complaint goes public fast." },
 ] as const;
 
 export const serviceGroups = [
