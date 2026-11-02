@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
   openGraph: { url: "/privacy", title: "Privacy policy · Reputrail", description: "How Reputrail collects, uses and protects personal information." },
-  twitter: { title: "Privacy policy · Reputrail" },
+  twitter: { card: "summary_large_image", title: "Privacy policy · Reputrail" },
 };
 
 const sections: { h: string; p: string[] }[] = [

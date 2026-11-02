@@ -1,3 +1,14 @@
+function resolveSiteUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) return explicit.replace(/\/$/, "");
+  // Production builds on Vercel use the production domain; previews use their own deployment URL.
+  if (process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return "https://reputrail.com.au";
+}
+
 /**
  * Single source of truth for business facts shown on the site.
  * Update here, not in components.
@@ -7,7 +18,14 @@ export const site = {
   tagline: "Your reputation. In good hands.",
   description:
     "Human-led reputation management for Australian trades, home services and property managers. We look after your reviews, respond to customers and help resolve complaints before they cost you the next job.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://reputrail.com.au",
+  /** One short line for link previews (WhatsApp, Messenger, LinkedIn truncate long descriptions). */
+  preview: "Human-led reputation management for Australian trades, home services and property managers.",
+  /**
+   * Absolute origin for metadata, Open Graph images, the sitemap and robots.
+   * Set NEXT_PUBLIC_SITE_URL in production. On Vercel previews it falls back to
+   * the deployment URL so link previews still resolve the image.
+   */
+  url: resolveSiteUrl(),
   locale: "en-AU",
   region: "Sydney, NSW",
   email: "hello@reputrail.com.au",

@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Reputrail — Managed reputation for Australian trades and property managers",
+    default: "Reputrail - Managed reputation for Australian trades and property managers",
     template: "%s · Reputrail",
   },
   description: site.description,
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     siteName: site.name,
-    description: site.description,
+    description: site.preview,
   },
   twitter: {
     card: "summary_large_image",
-    description: site.description,
+    description: site.preview,
   },
 };
 

@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 
 /**
- * Instrument Sans (OFL) — one family for the whole public site: display,
- * body and labels. Variable weight 400–700; width pinned to 100 at build.
+ * Instrument Sans (OFL) - one family for the whole public site: display,
+ * body and labels. Variable weight 400 to 700; width pinned to 100 at build.
  * Self-hosted; no third-party font requests.
  */
 export const instrument = localFont({

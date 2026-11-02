@@ -39,7 +39,7 @@ Node 20+ is required. No environment variables are needed for local development:
 1. Import the repository in Vercel. Framework preset: Next.js. No build settings need changing.
 2. Add environment variables:
    - `AUDIT_WEBHOOK_URL`: where audit requests are POSTed as JSON (`business, name, contact, contactType, listing, source, receivedAt`). A Make/Zapier webhook feeding a Google Sheet, a Formspree endpoint, or any HTTPS URL that returns 2xx. Without it the form degrades honestly.
-   - `NEXT_PUBLIC_SITE_URL`: the canonical URL (defaults to `https://reputrail.com.au`), used for metadata, Open Graph, sitemap and robots.
+   - `NEXT_PUBLIC_SITE_URL`: the canonical URL, used for metadata, the link-preview image, sitemap and robots. Set it to `https://reputrail.com.au` in production. When it is unset, Vercel production builds use the project’s production domain and preview builds use their own deployment URL, so link previews still resolve; outside Vercel it defaults to `https://reputrail.com.au`.
    - `WORKSPACE_PASSCODE`: required before deploying; gates `/workspace`.
    - `ANTHROPIC_API_KEY` (optional): enables Claude-assisted classification, drafting and insights in the workspace. Usage is a few cents per client per month; see `research/13-ai-architecture-and-boundaries.md`.
 3. Preview deployments on the Hobby plan are fine while private. Vercel's Hobby plan is for personal, non-commercial use, so move the project to **Vercel Pro** before promoting the site to customers (see `research/10-launch-plan.md`).

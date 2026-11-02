@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Get your free reputation audit · Reputrail",
     description: "One page on where your reviews stand against three local competitors, and what we’d fix first. Free, no obligation.",
   },
-  twitter: { title: "Get your free reputation audit · Reputrail" },
+  twitter: { card: "summary_large_image", title: "Get your free reputation audit · Reputrail" },
 };
 
 const steps = [

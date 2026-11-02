@@ -19,8 +19,8 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
-  openGraph: { url: "/", title: "Reputrail — Your reputation. In good hands." },
-  twitter: { title: "Reputrail — Your reputation. In good hands." },
+  openGraph: { url: "/", title: "Reputrail - Your reputation. In good hands.", description: site.preview },
+  twitter: { card: "summary_large_image", title: "Reputrail - Your reputation. In good hands.", description: site.preview },
 };
 
 export default function HomePage() {
@@ -35,7 +35,7 @@ export default function HomePage() {
         email: site.email,
         areaServed: { "@type": "Country", name: "Australia" },
         address: { "@type": "PostalAddress", addressLocality: "Sydney", addressRegion: "NSW", addressCountry: "AU" },
-        priceRange: "A$299–A$799 per month",
+        priceRange: "A$299 to A$799 per month",
         slogan: site.tagline,
       },
       {
