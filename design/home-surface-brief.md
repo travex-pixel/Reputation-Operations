@@ -2,6 +2,8 @@
 
 Development-only. Never copy into shipped source.
 
+> **Superseded on 2 November 2026.** The "dated service record" direction below (bottle-green field, amber, Bricolage Grotesque) is kept as the record of what was considered and built first. The current contract is the **Redesign addendum** at the end of this file; where the two disagree, the addendum wins.
+
 **Scope and mode:** Persuade. Marketing homepage plus the audit-request page it feeds.
 
 **Audience, job, action:** Sydney trade business owners (painters, plumbers, electricians, HVAC, renovators, roofers) reading on a phone between jobs or at night. Job: decide whether to hand the reviews/reputation job to someone they can trust. Action: request the free reputation audit (primary) or talk to us (secondary). Proof available: the mechanism itself (what happens when a bad review lands), the commitments (what we never do), transparent pricing, a clearly labelled illustrative audit. No customers, logos, testimonials or results exist and none may be implied.

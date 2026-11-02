@@ -8,11 +8,11 @@ const points = [
   },
   {
     title: "Complaints get ignored or handled badly",
-    body: "A rushed reply at the end of a long day makes it worse. A calm one, the same evening, usually fixes it.",
+    body: "A rushed reply at the end of a long day makes it worse. A calm one, first thing the next working day, usually fixes it.",
   },
   {
     title: "Happy customers never get asked",
-    body: "Most customers would leave a review if someone asked them properly. Most never are, so the unhappy few set the tone.",
+    body: "Happy customers rarely think to leave a review unless someone asks. Few are asked, so the unhappy few set the tone.",
   },
 ];
 
@@ -24,7 +24,7 @@ export function Problem() {
         title="A bad review shouldn’t cost you the next job."
         lede="You do good work. The problem is what happens online while you’re busy doing it."
       />
-      <ol className="mt-14 grid gap-10 border-t rule pt-10 md:grid-cols-3 md:gap-8">
+      <ol className="mt-10 grid gap-8 border-t rule pt-8 md:mt-14 md:grid-cols-3 md:gap-8 md:pt-10">
         {points.map((p, i) => (
           <Reveal as="li" key={p.title} delay={i * 80}>
             <span className="text-small tabular text-ink-faint">0{i + 1}</span>

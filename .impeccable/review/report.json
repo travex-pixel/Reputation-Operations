@@ -8,7 +8,7 @@
       "scrollW": 390,
       "clientW": 390
     },
-    "height": 14971
+    "height": 14657
   },
   {
     "page": "audit",
@@ -19,7 +19,7 @@
       "scrollW": 390,
       "clientW": 390
     },
-    "height": 2250
+    "height": 2271
   },
   {
     "page": "privacy",
@@ -37,8 +37,7 @@
     "viewport": "mobile",
     "status": 404,
     "consoleMsgs": [
-      "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
-      "warning: The resource http://localhost:3100/_next/static/media/InstrumentSans_Italic_var-s.p.2x7_dnbzduk85.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
     ],
     "overflow": {
       "scrollW": 390,
@@ -55,7 +54,7 @@
       "scrollW": 820,
       "clientW": 820
     },
-    "height": 12339
+    "height": 12664
   },
   {
     "page": "audit",
@@ -101,7 +100,7 @@
       "scrollW": 1440,
       "clientW": 1440
     },
-    "height": 10232
+    "height": 10576
   },
   {
     "page": "audit",

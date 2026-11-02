@@ -42,7 +42,7 @@ export function MobileCta({ heroId = "hero-heading", endId = "cta" }: { heroId?:
       }`}
     >
       <div className="mx-auto flex max-w-xl items-center justify-between gap-4">
-        <p className="hidden text-small text-ink-soft sm:block">Free. No obligation. Two working days.</p>
+        <p className="hidden text-small text-ink-soft sm:block">One page, yours to keep.</p>
         <ButtonLink href="/audit" className="w-full sm:w-auto" tabIndex={visible ? 0 : -1}>
           Get your free reputation audit
         </ButtonLink>

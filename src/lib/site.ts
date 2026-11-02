@@ -21,7 +21,8 @@ export const site = {
   /** Business identifiers shown in the footer once registered. */
   abn: "" as string,
   pricing: {
-    pilot: { label: "Founding customer pilot", price: 299, period: "for the first 30 days" },
+    /** Reduce `places` honestly as pilots are signed; the pilot panel hides the count at zero. */
+    pilot: { label: "Founding customer pilot", price: 299, period: "for the first 30 days", places: 3 as number },
     plans: [
       {
         id: "essential",
@@ -74,7 +75,7 @@ export const nav = [
 ] as const;
 
 export const trades = [
-  { name: "Plumbers", why: "Emergency callers choose on rating and recency within minutes." },
+  { name: "Plumbers", why: "Emergency callers pick from the first listings they see, and they look at the rating and the latest review." },
   { name: "Electricians", why: "Safety and licensing make trust the whole sale." },
   { name: "Air conditioning", why: "Big installs, seasonal rushes and warranty callbacks." },
   { name: "Builders and renovators", why: "Long jobs, big deposits, nervous clients." },

@@ -27,20 +27,25 @@ const steps = [
 export function HowItWorks() {
   return (
     <Section id="how-it-works" tone="raised" labelledBy="how-heading">
-      <SectionHeading
-        id="how-heading"
-        title="We handle the reviews. You run the business."
-        lede="Four steps, done by people, with your approval at every point that matters."
-      />
-      <ol className="mt-14 grid gap-px overflow-hidden rounded-md border rule bg-line md:grid-cols-2 lg:grid-cols-4">
-        {steps.map((s, i) => (
-          <Reveal as="li" key={s.n} delay={i * 80} className="bg-ground-raised p-6 md:p-7">
-            <span className="text-small tabular text-accent">{s.n}</span>
-            <h3 className="mt-6 text-heading text-ink">{s.title}</h3>
-            <p className="mt-3 text-small text-ink-soft">{s.body}</p>
-          </Reveal>
-        ))}
-      </ol>
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
+        <SectionHeading
+          id="how-heading"
+          title="We handle the reviews. You run the business."
+          lede="Four steps, done by people, with your approval at every point that matters."
+          className="lg:sticky lg:top-24 lg:self-start"
+        />
+        <ol className="border-t rule">
+          {steps.map((s, i) => (
+            <Reveal as="li" key={s.n} delay={i * 60} className="grid grid-cols-[3.5rem_1fr] gap-x-4 border-b rule py-7 md:grid-cols-[5rem_1fr] md:py-8">
+              <span className="pt-1 text-[1.25rem] font-semibold leading-none tracking-[-0.02em] tabular text-ink-faint md:text-[1.5rem]">{s.n}</span>
+              <div>
+                <h3 className="text-heading text-ink">{s.title}</h3>
+                <p className="mt-3 max-w-[34rem] text-body text-ink-soft">{s.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
     </Section>
   );
 }

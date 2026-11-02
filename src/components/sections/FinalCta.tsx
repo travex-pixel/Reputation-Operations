@@ -19,7 +19,17 @@ export function FinalCta() {
               Get your free reputation audit
             </ButtonLink>
             <p className="text-small text-ink-faint">
-              Or email{" "}
+              {site.phone ? (
+                <>
+                  Or call{" "}
+                  <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="tabular text-ink underline-offset-4 hover:underline">
+                    {site.phone}
+                  </a>{" "}
+                  or email{" "}
+                </>
+              ) : (
+                <>Or email </>
+              )}
               <a href={`mailto:${site.email}`} className="text-ink underline-offset-4 hover:underline">
                 {site.email}
               </a>

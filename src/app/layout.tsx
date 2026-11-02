@@ -22,17 +22,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     siteName: site.name,
-    title: "Reputrail — Your reputation. In good hands.",
     description: site.description,
-    url: site.url,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reputrail — Your reputation. In good hands.",
     description: site.description,
   },
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {
@@ -43,7 +38,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU" className={`${instrument.variable} ${jetbrains.variable}`}>
+    <html lang="en-AU" className={`${instrument.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Marks scripted pages so the hero feed waits for its trigger instead of starting at parse time. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="min-h-dvh antialiased">
         <a
           href="#main"

@@ -7,19 +7,22 @@ export const metadata: Metadata = {
   title: "Privacy policy",
   description: "How Reputrail collects, uses and protects personal information.",
   alternates: { canonical: "/privacy" },
+  robots: { index: true, follow: true },
+  openGraph: { url: "/privacy", title: "Privacy policy · Reputrail", description: "How Reputrail collects, uses and protects personal information." },
+  twitter: { title: "Privacy policy · Reputrail" },
 };
 
 const sections: { h: string; p: string[] }[] = [
   {
     h: "Who we are",
     p: [
-      `Reputrail ("we", "us") is a managed online-reputation service based in ${site.region}, Australia. This policy explains how we handle personal information when you use our website, request an audit, or become a client. It is written to follow the Australian Privacy Principles even where the Privacy Act’s small-business exemption might apply to us.`,
+      `Reputrail (“we”, “us”) is a managed online-reputation service based in ${site.region}, Australia. This policy explains how we handle personal information when you use our website, request an audit, or become a client. It is written to follow the Australian Privacy Principles even where the Privacy Act’s small-business exemption might apply to us.`,
     ],
   },
   {
     h: "What we collect",
     p: [
-      "From prospective clients: the details you give us on the audit request form (your name, business name, trade, suburb, website or listing link, email, phone, and anything you write in the notes field).",
+      "From prospective clients: the details you give us on the audit request form (your business name, your name, an email address or mobile number, and a website or listing link if you add one).",
       "From clients: business contact details, your preferences for how we respond to reviews, and the authorisation records that let us act on your behalf.",
       "From your customers, only when you ask us to run review requests: a first name and one contact detail (email or mobile) for each customer you nominate, plus the date of the completed job. We do not collect anything else about them.",
       "From public sources: the public text of reviews about your business and your competitors, as published on Google, hipages, Facebook and ProductReview.com.au.",

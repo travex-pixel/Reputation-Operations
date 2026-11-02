@@ -24,7 +24,7 @@ export function Section({
       aria-labelledby={labelledBy}
       className={`${tone === "raised" ? "bg-ground-raised" : "bg-ground"} ${className}`}
     >
-      <div className="container-x py-20 md:py-28 lg:py-32">{children}</div>
+      <div className="container-x py-16 md:py-28 lg:py-32">{children}</div>
     </section>
   );
 }

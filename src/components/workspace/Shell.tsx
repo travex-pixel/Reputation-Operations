@@ -82,7 +82,7 @@ export function Shell({ children, gated: gatedAtBuild }: { children: ReactNode; 
         <div className="mx-auto flex h-14 max-w-[90rem] items-center justify-between gap-4 px-4 md:px-6">
           <div className="flex items-center gap-3">
             <Link href="/workspace" className="flex items-center gap-2.5 rounded-sm" aria-label="Workspace overview">
-              <TagMark className="h-6 w-6 text-ink-on-field" />
+              <TagMark className="h-6 w-6 text-ink-on-field [--tagmark-cut:var(--field)]" />
               <span className="text-[1.0625rem] font-semibold tracking-[-0.02em] opsz-display" translate="no">
                 Reputrail
               </span>

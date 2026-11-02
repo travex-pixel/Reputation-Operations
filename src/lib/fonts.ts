@@ -6,10 +6,9 @@ import localFont from "next/font/local";
  * Self-hosted; no third-party font requests.
  */
 export const instrument = localFont({
-  src: [
-    { path: "../fonts/InstrumentSans-var.woff2", weight: "400 700", style: "normal" },
-    { path: "../fonts/InstrumentSans-Italic-var.woff2", weight: "400 700", style: "italic" },
-  ],
+  src: "../fonts/InstrumentSans-var.woff2",
+  weight: "400 700",
+  style: "normal",
   variable: "--font-instrument",
   display: "swap",
   preload: true,

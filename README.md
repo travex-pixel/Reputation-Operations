@@ -38,7 +38,7 @@ Node 20+ is required. No environment variables are needed for local development:
 
 1. Import the repository in Vercel. Framework preset: Next.js. No build settings need changing.
 2. Add environment variables:
-   - `AUDIT_WEBHOOK_URL`: where audit requests are POSTed as JSON (`name, business, trade, suburb, listing, email, phone, contact, notes, source, receivedAt`). A Make/Zapier webhook feeding a Google Sheet, a Formspree endpoint, or any HTTPS URL that returns 2xx. Without it the form degrades honestly.
+   - `AUDIT_WEBHOOK_URL`: where audit requests are POSTed as JSON (`business, name, contact, contactType, listing, source, receivedAt`). A Make/Zapier webhook feeding a Google Sheet, a Formspree endpoint, or any HTTPS URL that returns 2xx. Without it the form degrades honestly.
    - `NEXT_PUBLIC_SITE_URL`: the canonical URL (defaults to `https://reputrail.com.au`), used for metadata, Open Graph, sitemap and robots.
    - `WORKSPACE_PASSCODE`: required before deploying; gates `/workspace`.
    - `ANTHROPIC_API_KEY` (optional): enables Claude-assisted classification, drafting and insights in the workspace. Usage is a few cents per client per month; see `research/13-ai-architecture-and-boundaries.md`.
@@ -48,7 +48,7 @@ Node 20+ is required. No environment variables are needed for local development:
 ## Before going public: a checklist
 
 - [ ] Run the ASIC, ABN Lookup, IP Australia and auDA checks on the name (`research/raw-name-clearance.md`).
-- [ ] Add the founder's name, phone and (optionally) photo in `src/lib/site.ts` and the Founder section.
+- [ ] Add the founder’s name and phone number in `src/lib/site.ts`. The site says "someone who picks up the phone", so do not send prospects to it until the number is live (the footer and closing section show it automatically once set).
 - [ ] Add the ABN to `src/lib/site.ts` once registered.
 - [ ] Have a lawyer review `/privacy` and the service agreement outline (`research/08-compliance-and-risk.md` §10).
 - [ ] Set `AUDIT_WEBHOOK_URL` and test a submission end to end.

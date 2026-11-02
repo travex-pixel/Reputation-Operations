@@ -3,10 +3,23 @@
 import { useActionState, useEffect, useRef } from "react";
 import { Button } from "@/components/Button";
 import { requestAudit } from "./actions";
-import type { AuditFormState } from "./fields";
+import { fieldNames, type AuditFormState } from "./fields";
 import { site } from "@/lib/site";
 
 const initial: AuditFormState = { status: "idle" };
+
+/** When the form has no destination, hand the typed details to the email client so nothing is retyped. */
+function fallbackMailto(v: Partial<Record<string, string>>) {
+  const body = [
+    `Business: ${v.business ?? ""}`,
+    `Name: ${v.name ?? ""}`,
+    `Email or mobile: ${v.contact ?? ""}`,
+    v.listing ? `Link: ${v.listing}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  return `mailto:${site.email}?subject=${encodeURIComponent("Free reputation audit")}&body=${encodeURIComponent(body)}`;
+}
 
 const labelCls = "block text-small font-medium text-ink";
 const inputCls =
@@ -17,22 +30,32 @@ const errorCls = "mt-2 text-[0.8125rem] font-medium leading-relaxed text-signal-
 export function AuditForm() {
   const [state, action, pending] = useActionState(requestAudit, initial);
   const formRef = useRef<HTMLFormElement>(null);
+  const doneRef = useRef<HTMLHeadingElement>(null);
 
-  // Focus the first invalid field after a failed submit.
+  // After a failed submit, focus the first invalid field in form order.
+  // After success, the form is gone, so move focus to the confirmation heading.
   useEffect(() => {
+    if (state.status === "success") {
+      doneRef.current?.focus();
+      return;
+    }
     if (state.status !== "error" || !state.errors || !formRef.current) return;
-    const first = Object.keys(state.errors)[0];
-    formRef.current.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
+    const first = fieldNames.find((n) => state.errors?.[n]);
+    if (first) formRef.current.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
   }, [state]);
 
   if (state.status === "success") {
     return (
-      <div role="status" aria-live="polite" className="rounded-md border rule bg-ground-raised p-7 shadow-lift md:p-9">
-        <p className="label text-accent">Received</p>
-        <h2 className="mt-4 text-title text-ink">Thanks. We’ve got it.</h2>
+      <div role="status" className="rounded-md border rule bg-ground-raised p-7 shadow-lift md:p-9">
+        <h2 ref={doneRef} tabIndex={-1} className="text-title text-ink outline-none">
+          Thanks. We’ve got it.
+        </h2>
         <p className="mt-5 max-w-[30rem] text-body text-ink-soft">
-          A person at Reputrail will read your request today and confirm we have the right business. Your one-page audit
-          follows within two working days, to the email or mobile you gave us.
+          A person at Reputrail will read your request within one working day and confirm we have the right business. Your
+          one-page audit follows within two working days, to the email or mobile you gave us.
+        </p>
+        <p className="mt-4 max-w-[30rem] text-body text-ink-soft">
+          We send it; we don’t ring you to sell. If you’d like to talk it through, reply and we’ll set up a call.
         </p>
         <p className="mt-6 border-t rule pt-5 text-small text-ink-soft">
           Need us sooner? Email{" "}
@@ -55,7 +78,7 @@ export function AuditForm() {
           <p role="alert" className="rounded-sm border border-signal/40 bg-signal/5 px-4 py-3 text-small font-medium text-ink">
             {state.message}{" "}
             {!state.errors ? (
-              <a href={`mailto:${site.email}?subject=Free%20reputation%20audit`} className="font-medium text-accent underline underline-offset-4">
+              <a href={fallbackMailto(v)} className="font-medium text-accent underline underline-offset-4">
                 Email {site.email}
               </a>
             ) : null}
@@ -75,13 +98,13 @@ export function AuditForm() {
             defaultValue={v.business}
             aria-invalid={!!e.business}
             aria-describedby={e.business ? "business-error" : "business-hint"}
-            placeholder="As it appears on Google"
+            placeholder="e.g. Example Plumbing, Marrickville"
             className={inputCls}
           />
           {e.business ? (
             <p id="business-error" className={errorCls}>{e.business}</p>
           ) : (
-            <p id="business-hint" className={hintCls}>We’ll find your listing from this.</p>
+            <p id="business-hint" className={hintCls}>Add your suburb if the name is common. We’ll find your listing from this.</p>
           )}
         </div>
 
@@ -111,7 +134,7 @@ export function AuditForm() {
             id="contact"
             name="contact"
             type="text"
-            inputMode="email"
+            inputMode="text"
             autoComplete="email"
             spellCheck={false}
             required
@@ -139,9 +162,12 @@ export function AuditForm() {
             autoComplete="url"
             spellCheck={false}
             defaultValue={v.listing}
+            aria-invalid={!!e.listing}
+            aria-describedby={e.listing ? "listing-error" : undefined}
             placeholder="https://"
             className={inputCls}
           />
+          {e.listing ? <p id="listing-error" className={errorCls}>{e.listing}</p> : null}
         </div>
 
         {/* Honeypot, hidden from people and assistive tech */}
@@ -151,7 +177,15 @@ export function AuditForm() {
         </div>
 
         <div className="grid gap-4 border-t rule pt-6">
-          <Button type="submit" size="lg" disabled={pending} className="w-full">
+          <Button
+            type="submit"
+            size="lg"
+            aria-disabled={pending}
+            onClick={(ev) => {
+              if (pending) ev.preventDefault();
+            }}
+            className="w-full"
+          >
             {pending ? (
               <>
                 <svg className="h-4 w-4 animate-spin" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
@@ -165,7 +199,7 @@ export function AuditForm() {
             )}
           </Button>
           <p className="text-[0.8125rem] leading-relaxed text-ink-faint">
-            A person reads this today. Your audit arrives within two working days. We never share your details; see our{" "}
+            A person reads this within one working day. Your audit arrives within two. We never share your details; see our{" "}
             <a href="/privacy" className="underline underline-offset-4 hover:text-ink">
               privacy policy
             </a>

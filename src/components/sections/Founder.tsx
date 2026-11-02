@@ -1,5 +1,4 @@
 import { Reveal } from "@/components/Reveal";
-import { TagMark } from "@/components/Wordmark";
 import { site } from "@/lib/site";
 import { Section } from "@/components/Section";
 
@@ -20,10 +19,7 @@ export function Founder() {
             I’m based in Sydney and I’d rather pick up the phone than send a ticket. If a review is bothering you, or you just want a second opinion, get in touch. The audit is free either way.
           </p>
         </div>
-        <p className="mt-8 flex items-center gap-3 text-small font-semibold text-ink">
-          <TagMark className="h-6 w-6 text-accent" />
-          <span>{signature}</span>
-        </p>
+        <p className="mt-8 text-small font-semibold text-ink">{signature}</p>
       </Reveal>
     </Section>
   );

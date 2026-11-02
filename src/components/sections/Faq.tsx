@@ -4,11 +4,11 @@ import { Section, SectionHeading } from "@/components/Section";
 export const faqs = [
   {
     q: "Is this AI?",
-    a: "No. Software helps us spot new reviews, sort them and produce a first draft. A person reads every review, edits every draft so it sounds like you, decides what needs escalating and briefs you before any customer call. Nothing is published without your approval.",
+    a: "Not the part that matters. Software, including AI, helps us spot new reviews, sort them and produce a first draft. A person reads every review, rewrites the draft so it sounds like you, decides what needs escalating and briefs you before any customer call. Nothing is published without your approval, and no customer’s details are sent to any AI tool.",
   },
   {
     q: "Can you remove negative reviews?",
-    a: "Only when a review breaks Google’s own rules, for example it’s about a different business or the person was never a customer. We prepare the report and submit it with your approval; Google decides. Genuine negative reviews can’t be removed, and anyone who promises otherwise is misleading you. What we can do is make sure every one gets a calm reply and, where possible, a private fix.",
+    a: "Only when a review breaks Google’s own rules, for example it’s about a different business or the person was never a customer. We prepare the report and submit it with your approval; Google decides. Genuine negative reviews can’t be removed, and anyone who promises otherwise is misleading you. What we can do is make sure every one gets a calm reply and, where possible, a private fix. We never ask a customer to change a review.",
   },
   {
     q: "Do you need my password?",
@@ -46,8 +46,8 @@ export function Faq() {
           {faqs.map((f, i) => (
             <Reveal key={f.q} delay={Math.min(i * 40, 200)}>
               <details className="faq group border-b rule">
-                <summary className="flex cursor-pointer items-start justify-between gap-6 py-5 text-left text-heading text-ink transition-colors duration-200 hover:text-accent md:py-6">
-                  <span>{f.q}</span>
+                <summary className="flex cursor-pointer items-start justify-between gap-6 py-5 text-left text-ink transition-colors duration-200 hover:text-accent md:py-6">
+                  <h3 className="text-heading">{f.q}</h3>
                   <svg
                     className="mt-1.5 h-5 w-5 shrink-0 text-ink-faint transition-transform duration-300 ease-out-expo group-open:rotate-45"
                     viewBox="0 0 20 20"
@@ -58,7 +58,7 @@ export function Faq() {
                     <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                 </summary>
-                <p className="max-w-[40rem] pb-6 text-body text-ink-soft">{f.a}</p>
+                <p className="max-w-[40rem] pb-6 pt-1 text-body text-ink-soft">{f.a}</p>
               </details>
             </Reveal>
           ))}

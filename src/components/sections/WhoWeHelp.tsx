@@ -5,7 +5,7 @@ import { trades } from "@/lib/site";
 export function WhoWeHelp() {
   return (
     <Section id="who" labelledBy="who-heading">
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
+      <div className="grid gap-10 md:gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
         <SectionHeading
           id="who-heading"
           title="Built for businesses where trust wins work."

@@ -43,7 +43,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-3 border-t rule pt-6 text-[0.8125rem] leading-relaxed text-ink-faint md:flex-row md:items-start md:justify-between">
           <p>
             © {year} {site.name}
-            {site.abn ? ` · ABN ${site.abn}` : ""}. We never buy, write or suppress reviews.
+            {site.abn ? ` · ABN ${site.abn}` : ""}. We never buy, fake or suppress reviews.
           </p>
           <p className="md:max-w-md md:text-right">
             Reputrail is independent and not affiliated with Google. Google and Google Business Profile are trade marks of Google LLC.

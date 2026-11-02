@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   description:
     "Send us your business name. Within two working days you’ll have a one-page audit of your reviews against three local competitors and the three things we’d fix first. Free, no obligation.",
   alternates: { canonical: "/audit" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    url: "/audit",
+    title: "Get your free reputation audit · Reputrail",
+    description: "One page on where your reviews stand against three local competitors, and what we’d fix first. Free, no obligation.",
+  },
+  twitter: { title: "Get your free reputation audit · Reputrail" },
 };
 
 const steps = [

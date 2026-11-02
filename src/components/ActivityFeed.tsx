@@ -1,9 +1,9 @@
 import { RecordMotion } from "./RecordMotion";
 
 /**
- * The hero visual: what happens inside Reputrail in the forty minutes after a
- * bad review lands. A quiet, dated feed on a white sheet. Entries fade in once.
- * Fictional, and labelled as such.
+ * The hero visual: a bad review lands on Tuesday evening and is handled first
+ * thing on the next working morning. A quiet, dated feed on a white sheet.
+ * Entries fade in once. Fictional, and labelled as such.
  */
 type Entry = {
   time: string;
@@ -23,31 +23,31 @@ const entries: Entry[] = [
     state: "signal",
   },
   {
-    time: "7:46 pm",
+    time: "7:30 am",
     who: "Reputrail",
     title: "Read by a person",
     body: "Not a workmanship complaint. A missed booking, and a customer who still wants the job done.",
   },
   {
-    time: "7:51 pm",
+    time: "7:38 am",
     who: "Reputrail",
     title: "Issue identified",
-    body: "Scheduling miss. Worth a call tomorrow, call-out fee waived.",
+    body: "Scheduling miss. Worth a call this morning, call-out fee waived.",
   },
   {
-    time: "8:05 pm",
+    time: "7:50 am",
     who: "Reputrail",
     title: "Reply drafted in your voice",
-    quote: "Sarah, that’s on us. You shouldn’t have had to chase. I’ll ring you first thing tomorrow and put it right.",
+    quote: "Sarah, that’s on us. You shouldn’t have had to chase. I’ll ring you this morning and put it right.",
   },
   {
-    time: "8:06 pm",
+    time: "7:51 am",
     who: "Reputrail",
     title: "Sent to you for approval",
     body: "One text. The review, our read on it, and the draft.",
   },
   {
-    time: "8:20 pm",
+    time: "8:05 am",
     who: "You",
     title: "Approved from your phone",
     body: "Published on Google two minutes later.",
@@ -60,11 +60,11 @@ export function ActivityFeed({ className = "" }: { className?: string }) {
     <RecordMotion className={className}>
       <figure
         className="overflow-hidden rounded-md border rule bg-ground-raised shadow-float"
-        aria-label="Illustrative example of how a negative review is handled on the evening it arrives"
+        aria-label="Illustrative example of how a negative review that lands on Tuesday evening is handled on Wednesday morning"
       >
         <figcaption className="flex items-center justify-between gap-4 border-b rule px-5 py-3.5 text-[0.8125rem] text-ink-faint">
-          <span className="font-medium text-ink">Tuesday evening</span>
-          <span>Illustrative example</span>
+          <span className="font-medium tabular text-ink">Tue 7:42 pm to Wed 8:05 am</span>
+          <span className="shrink-0">Illustrative example</span>
         </figcaption>
 
         <ol className="px-5 pb-2 pt-1">
@@ -112,7 +112,7 @@ export function ActivityFeed({ className = "" }: { className?: string }) {
           style={{ "--i": entries.length } as React.CSSProperties}
         >
           <span>Nothing published without your approval</span>
-          <span className="tabular">38 min, start to finish</span>
+          <span>Answered the next working morning</span>
         </div>
       </figure>
     </RecordMotion>

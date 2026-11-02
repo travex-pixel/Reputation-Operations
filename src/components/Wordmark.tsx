@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-/** The mark: a tag with a punched hole and a tick. Drawn, not an icon font. */
+/**
+ * The mark: a tag with a punched hole and a tick. Drawn, not an icon font.
+ * The hole and tick are cut in `--tagmark-cut` (defaults to the page ground);
+ * set it on a dark surface, e.g. `[--tagmark-cut:var(--field)]`.
+ */
 export function TagMark({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
@@ -8,8 +12,8 @@ export function TagMark({ className = "h-6 w-6" }: { className?: string }) {
         d="M14.4 2.6a2.6 2.6 0 0 1 3.2 0l9.4 7.4a2.6 2.6 0 0 1 1 2.05V27a2.6 2.6 0 0 1-2.6 2.6H6.6A2.6 2.6 0 0 1 4 27V12.05a2.6 2.6 0 0 1 1-2.05l9.4-7.4Z"
         fill="currentColor"
       />
-      <circle cx="16" cy="9.6" r="2.1" fill="var(--ground)" />
-      <path d="M10.6 19.4l3.5 3.5 7.3-7.6" stroke="var(--ground)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="16" cy="9.6" r="2.1" fill="var(--tagmark-cut, var(--ground))" />
+      <path d="M10.6 19.4l3.5 3.5 7.3-7.6" stroke="var(--tagmark-cut, var(--ground))" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

@@ -22,12 +22,9 @@
 
   --accent: #315b49;
   --accent-deep: #27493b;
-  --accent-soft: #eaf0ec;
 
   /* Dark surfaces (workspace top bar, report score block). */
   --field: #315b49;
-  --field-deep: #27493b;
-  --field-raised: #3c6b57;
   --ink-on-field: #f7f7f4;
   --ink-on-field-soft: #c9d8d0;
   --line-on-field: rgb(247 247 244 / 0.16);
@@ -35,20 +32,15 @@
 
   /* Highlights on dark surfaces and warm status text. */
   --stamp: #bfe0cf;
-  --stamp-deep: #315b49;
   --stamp-ink: #7a5a1e;
   --green-mid: #315b49;
   --green-bright: #4f8c72;
 
   --signal: #b5483a;
   --signal-ink: #9a3b2e;
-  --signal-on-field: #f0a595;
 
   --radius: 6px;
   --radius-lg: 12px;
-
-  --shadow-lift: 0 1px 2px rgb(23 23 23 / 0.04), 0 8px 24px -16px rgb(23 23 23 / 0.18);
-  --shadow-float: 0 1px 2px rgb(23 23 23 / 0.05), 0 24px 56px -28px rgb(23 23 23 / 0.28);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -65,22 +57,17 @@
   --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
   --color-accent-deep: var(--accent-deep);
-  --color-accent-soft: var(--accent-soft);
   --color-field: var(--field);
-  --color-field-deep: var(--field-deep);
-  --color-field-raised: var(--field-raised);
   --color-ink-on-field: var(--ink-on-field);
   --color-ink-on-field-soft: var(--ink-on-field-soft);
   --color-line-on-field: var(--line-on-field);
   --color-line-on-field-strong: var(--line-on-field-strong);
   --color-stamp: var(--stamp);
-  --color-stamp-deep: var(--stamp-deep);
   --color-stamp-ink: var(--stamp-ink);
   --color-green-mid: var(--green-mid);
   --color-green-bright: var(--green-bright);
   --color-signal: var(--signal);
   --color-signal-ink: var(--signal-ink);
-  --color-signal-on-field: var(--signal-on-field);
 
   --font-sans: var(--font-instrument), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
@@ -88,11 +75,12 @@
   --radius-sm: var(--radius);
   --radius-md: var(--radius-lg);
 
-  --shadow-lift: var(--shadow-lift);
-  --shadow-float: var(--shadow-float);
+  /* Shadows are defined here only; the eases are mirrored from :root for plain CSS. */
+  --shadow-lift: 0 1px 2px rgb(23 23 23 / 0.04), 0 8px 24px -16px rgb(23 23 23 / 0.18);
+  --shadow-float: 0 1px 2px rgb(23 23 23 / 0.05), 0 24px 56px -28px rgb(23 23 23 / 0.28);
 
-  --ease-out-expo: var(--ease-out-expo);
-  --ease-out-quart: var(--ease-out-quart);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
   /* Type roles (fluid). One family; weight and size carry hierarchy. */
   --text-display: clamp(2.75rem, 1.7rem + 4.6vw, 4.5rem);
@@ -263,17 +251,9 @@
   font-variant-numeric: tabular-nums;
 }
 
-@utility text-pretty {
-  text-wrap: pretty;
-}
-
 /* Kept for the workspace, which was written against the earlier optical-size axis. */
 @utility opsz-display {
   letter-spacing: -0.02em;
-}
-
-@utility opsz-text {
-  letter-spacing: 0;
 }
 
 /* Small uppercase label (eyebrow, column headings, statuses). */
@@ -289,17 +269,8 @@
   border-color: var(--line);
 }
 
-@utility rule-on-field {
-  border-color: var(--line-on-field);
-}
-
-/* Legacy name used by the workspace commitments panel. */
-@utility tag-shape {
-  border-radius: var(--radius-lg);
-}
-
 /* ------------------------------------------------------------------
-   Motion. Gentle, once, interruptible. One authored moment: the record.
+   Motion. Gentle, once, interruptible. One authored moment: the activity feed.
    ------------------------------------------------------------------ */
 @keyframes stamp-in {
   from {
@@ -345,25 +316,28 @@
 
 .record-entry {
   opacity: 0;
-  animation: stamp-in 520ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 340ms + 200ms);
+  animation: stamp-in 420ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 140ms + 150ms);
 }
 
 .record-entry .record-rule {
   transform-origin: top center;
-  animation: rule-draw 520ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 340ms + 260ms);
+  animation: rule-draw 420ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 140ms + 200ms);
   transform: scaleY(0);
 }
 
 .record-mark {
   opacity: 0;
-  animation: mark-in 420ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 340ms + 420ms);
+  animation: mark-in 360ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 140ms + 350ms);
   transform-origin: center;
 }
 
-/* With JS, hold the sequence until the record is on screen. */
+/* With JS (html.js is set at parse time), hold the sequence until the feed is on screen. */
+.js .record-entry,
+.js .record-mark,
+.js .record-entry .record-rule,
 .record-armed .record-entry,
 .record-armed .record-mark,
 .record-armed .record-entry .record-rule {

@@ -27,6 +27,8 @@ export async function requestAudit(_prev: AuditFormState, formData: FormData): P
   if (values.name.length < 2) errors.name = "Add your name so we know who to ask for.";
   if (!isEmail(values.contact) && !isPhone(values.contact))
     errors.contact = "Enter an email address or a mobile number so we can send you the audit.";
+  if (values.listing && !/^https?:\/\/\S+$/i.test(values.listing))
+    errors.listing = "Paste a full web address starting with https://, or leave it blank.";
 
   if (Object.keys(errors).length) {
     return { status: "error", message: "Check the highlighted fields and try again.", errors, values };

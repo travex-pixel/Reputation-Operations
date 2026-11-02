@@ -17,9 +17,8 @@ Strategy: *Restrained.* The ground and white carry the whole public site; the ac
 | `--line` / `--line-strong` | `#E9E7E2` / `#D6D3CC` | `rule`, `border-line-strong` | Hairlines; input borders |
 | `--accent` | `#315B49` | `bg-accent`, `text-accent` | Primary action, label, numerals, ticks, focus ring (7.3:1 on ground; white on accent 7.7:1) |
 | `--accent-deep` | `#27493B` | `bg-accent-deep` | Primary hover |
-| `--accent-soft` | `#EAF0EC` | `bg-accent-soft` | Reserved for tints; unused on the public site |
 | `--signal` / `--signal-ink` | `#B5483A` / `#9A3B2E` | `text-signal-ink` | Negative-review title in the feed; invalid borders and error text only |
-| `--field`, `--field-deep`, `--field-raised` | `#315B49`, `#27493B`, `#3C6B57` | `bg-field` | Workspace top bar, report score block, "Won" chips |
+| `--field` | `#315B49` | `bg-field` | Workspace top bar, report score block, "Won" chips |
 | `--ink-on-field`, `--ink-on-field-soft` | `#F7F7F4`, `#C9D8D0` | | Text on dark surfaces |
 | `--stamp` | `#BFE0CF` | `text-stamp` | Mint highlight on dark surfaces only (score band label) |
 | `--stamp-ink` | `#7A5A1E` | `text-stamp-ink` | Warm warning text in workspace chips and banners |
@@ -29,7 +28,7 @@ Rules: the accent is never body text; no gradients on the public site; shadows a
 
 ## Typography
 
-- **Instrument Sans** (OFL, variable `wght` 400–700 plus italic): display, body and labels. Self-hosted at `src/fonts/InstrumentSans-var.woff2` (40 KB) and `InstrumentSans-Italic-var.woff2`, loaded through `next/font/local` as `--font-instrument`. A static semibold TTF (`InstrumentSans-SemiBold-og.ttf`) feeds the Open Graph image.
+- **Instrument Sans** (OFL, variable `wght` 400–700, upright only; no italic is shipped): display, body and labels. Self-hosted at `src/fonts/InstrumentSans-var.woff2` (40 KB), loaded through `next/font/local` as `--font-instrument`. A static semibold TTF (`InstrumentSans-SemiBold-og.ttf`) feeds the Open Graph image.
 - **JetBrains Mono** (OFL, variable): workspace data only. `--font-jetbrains`. Not used on the public site.
 
 | Role | Utility | Size | Line height | Tracking | Weight |

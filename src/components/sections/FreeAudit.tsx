@@ -17,10 +17,10 @@ function ReportPreview() {
     >
       <figcaption className="flex items-center justify-between gap-4 text-[0.8125rem] text-ink-faint">
         <span>Reputation audit</span>
-        <span>Fictional example</span>
+        <span>Illustrative example</span>
       </figcaption>
-      <h3 className="mt-4 text-[1.375rem] font-semibold tracking-[-0.02em] text-ink">Harbour Plumbing Co.</h3>
-      <p className="text-small text-ink-faint">Inner West, Sydney · prepared 4 November</p>
+      <h3 className="mt-4 text-[1.375rem] font-semibold tracking-[-0.02em] text-ink">Example Plumbing Co.</h3>
+      <p className="text-small text-ink-faint">Inner West, Sydney · one page</p>
 
       <table className="mt-6 w-full text-small">
         <caption className="sr-only">Rating, reviews and reply rate compared with three nearby competitors</caption>
@@ -34,7 +34,7 @@ function ReportPreview() {
         </thead>
         <tbody className="tabular">
           {[
-            ["Harbour Plumbing Co.", "4.3", "41", "12%", true],
+            ["Example Plumbing Co.", "4.3", "41", "12%", true],
             ["Competitor A", "4.8", "212", "94%", false],
             ["Competitor B", "4.6", "97", "61%", false],
             ["Competitor C", "4.1", "28", "0%", false],
@@ -71,7 +71,7 @@ export function FreeAudit() {
             title="See where your reputation stands."
             lede="Send us your business name. Within two working days you’ll have one page that shows you three things."
           />
-          <ol className="mt-10 grid gap-6 border-t rule pt-8">
+          <ol className="mt-8 grid gap-6 border-t rule pt-8 md:mt-10">
             {points.map((p, i) => (
               <Reveal as="li" key={p.title} delay={i * 80} className="grid grid-cols-[2rem_1fr] gap-x-4">
                 <span className="pt-0.5 text-small tabular text-ink-faint">{i + 1}.</span>
@@ -86,7 +86,7 @@ export function FreeAudit() {
             <ButtonLink href="/audit" size="lg" className="w-full sm:w-auto">
               Get your free reputation audit
             </ButtonLink>
-            <p className="mt-4 text-small text-ink-faint">Free. No obligation. No logins or access needed.</p>
+            <p className="mt-4 text-small text-ink-faint">No logins or access needed. We only use what’s already public.</p>
           </Reveal>
         </div>
         <Reveal delay={120}>
