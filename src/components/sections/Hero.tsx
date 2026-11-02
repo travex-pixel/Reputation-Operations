@@ -7,7 +7,8 @@ export function Hero() {
       <div className="container-x grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-center lg:gap-x-16 lg:pb-28 lg:pt-20">
         <div className="max-w-[36rem]">
           <p className="label text-accent">
-            Human-led reputation management <span className="whitespace-nowrap">· Australia-wide</span>
+            Human-led reputation management<span className="hidden md:inline"> · </span>
+            <span className="block md:inline">Australia-wide</span>
           </p>
           <h1 id="hero-heading" className="mt-5 text-display text-ink">
             Your reputation.
