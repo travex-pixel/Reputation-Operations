@@ -1,0 +1,288 @@
+/* Workspace (Operate mode): precise, layered, quietly glossy. Same tokens as the site. */
+
+.ws {
+  --ws-surface: #ffffff;
+  --ws-surface-2: #f7f8f5;
+  --ws-gloss: linear-gradient(180deg, rgb(255 255 255 / 0.9), rgb(255 255 255 / 0) 55%);
+  --ws-shadow-card: inset 0 1px 0 rgb(255 255 255 / 0.85), 0 1px 2px rgb(11 28 23 / 0.06),
+    0 10px 30px -18px rgb(11 28 23 / 0.35);
+  --ws-shadow-raised: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 2px 4px rgb(11 28 23 / 0.08),
+    0 24px 48px -24px rgb(11 28 23 / 0.45);
+  --ws-shadow-field: inset 0 1px 2px rgb(11 28 23 / 0.06);
+  background: var(--ground);
+  min-height: 100dvh;
+  /* Wide tables scroll inside their cards; the document itself never scrolls sideways. */
+  overflow-x: clip;
+}
+
+.ws-card {
+  background: var(--ws-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ws-shadow-card);
+}
+
+.ws-card-raised {
+  background: var(--ws-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ws-shadow-raised);
+}
+
+.ws-field {
+  width: 100%;
+  min-height: 2.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--ws-surface);
+  box-shadow: var(--ws-shadow-field);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--ink);
+  transition:
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.ws-field:hover {
+  border-color: var(--ink-faint);
+}
+
+.ws-field:focus {
+  outline: none;
+  border-color: var(--field);
+  box-shadow:
+    var(--ws-shadow-field),
+    0 0 0 3px rgb(15 44 37 / 0.12);
+}
+
+.ws-field::placeholder {
+  color: var(--ink-faint);
+}
+
+select.ws-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%233f524b' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.625rem center;
+  background-size: 1rem;
+  padding-right: 2.25rem;
+}
+
+textarea.ws-field {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.ws-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.ws-hint {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+/* Glossy primary action: the same amber, with a top light and a soft under-shadow */
+.ws-btn-primary {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.28), rgb(255 255 255 / 0) 50%),
+    var(--stamp);
+  color: var(--field-deep);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    0 1px 2px rgb(11 28 23 / 0.12),
+    0 8px 20px -10px rgb(201 133 31 / 0.6);
+}
+
+.ws-btn-primary:hover {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.ws-btn-primary:active {
+  transform: translateY(0);
+}
+
+.ws-btn-secondary {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.9), rgb(255 255 255 / 0.4)),
+    var(--ws-surface-2);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.9),
+    0 1px 2px rgb(11 28 23 / 0.06);
+}
+
+.ws-btn-secondary:hover {
+  border-color: var(--ink-faint);
+  transform: translateY(-1px);
+}
+
+.ws-btn-field {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0) 50%),
+    var(--field);
+  color: var(--ink-on-field);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    0 1px 2px rgb(11 28 23 / 0.2),
+    0 10px 24px -12px rgb(15 44 37 / 0.7);
+}
+
+.ws-btn-field:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.ws-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 1.5rem;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.ws-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+}
+
+.ws-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--ws-surface-2);
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.ws-table th button {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ws-table th button:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.ws-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.ws-table tbody tr:hover td {
+  background: rgb(15 44 37 / 0.03);
+}
+
+.ws-num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Gloss strip for the workspace header */
+.ws-topbar {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.12), rgb(255 255 255 / 0) 60%),
+    var(--field);
+  box-shadow:
+    inset 0 -1px 0 rgb(255 255 255 / 0.08),
+    0 8px 24px -16px rgb(10 31 26 / 0.8);
+}
+
+/* Document surfaces (audit and report) with a faint paper reflection */
+.ws-doc {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 1), rgb(255 255 255 / 0) 12rem),
+    #fbfbf9;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ws-shadow-raised);
+}
+
+.ws-meter {
+  position: relative;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--ground-sunken);
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgb(11 28 23 / 0.08);
+}
+
+.ws-meter > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0) 60%),
+    var(--green-bright);
+  transition: width 600ms var(--ease-out-expo);
+}
+
+.ws-meter[data-tone="warn"] > span {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0) 60%),
+    var(--stamp);
+}
+
+.ws-meter[data-tone="bad"] > span {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0) 60%),
+    var(--signal);
+}
+
+@media print {
+  .ws-no-print,
+  .ws-topbar,
+  .ws-sidebar {
+    display: none !important;
+  }
+  .ws {
+    background: #fff;
+  }
+  .ws-doc {
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+  }
+  .ws-print-page {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  a[href]::after {
+    content: "";
+  }
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}

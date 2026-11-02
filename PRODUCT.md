@@ -38,7 +38,7 @@ Manual first: Google Business Profile, hipages, Facebook and ProductReview listi
 - Primary CTA: "Get your free reputation audit". Secondary: "Talk to us". No software free trial, no self-serve signup.
 - Pricing shown on site (provisional, owner-confirmed): Essential A$299/mo, Managed A$499/mo, Premium A$799/mo; founding-customer pilot A$299 for 30 days.
 - Compliance commitments that the copy must reflect: no fake, bought or incentivised reviews; no review gating or selective asking; no promised removals, rankings or star ratings; responses only published with the owner's authorisation; Google decides removals.
-- Technical limits: marketing site only; no auth, dashboards, payments, Google API integrations, scraping, databases or background agents.
+- Technical limits: marketing site plus an internal founder workspace (`/workspace`, passcode-gated, browser-stored data); no customer dashboards, payments, Google API integrations, scraping, hosted databases or background agents yet.
 - Terminology: "reputation audit", "review response", "escalation", "customer recovery", "review request", "monthly report", "Google Business Profile" (not "Google My Business"), "tradie" acceptable in copy but not in headings.
 
 ## Brand Commitments
@@ -48,6 +48,10 @@ Manual first: Google Business Profile, hipages, Facebook and ProductReview listi
 - Voice: plain Australian English, second person, specific, no hype ("unlock", "revolutionise", "next level" are banned). Spelling: Australian (organise, colour, programme).
 - The founder is the relationship layer; the technology works quietly.
 - Avoid: purple AI gradients, robot illustrations, excessive rounded cards, floating blobs, stock photography, unnecessary animation, fake dashboards, fake testimonials, fabricated results, fake logos.
+
+## Capabilities added in phase 2
+
+Internal workspace: prospect database (50 researched Sydney businesses, verification-labelled), audit generator with print view, monthly report generator with KPIs, attribution labels and the Reputrail Score, operations board with review intelligence, response drafting and a mandatory human approval chain, clients, backup/restore. AI runs behind a replaceable provider: Claude when `ANTHROPIC_API_KEY` is set, labelled deterministic rules otherwise. See `REPUTRAIL_AGENT_ROADMAP.md`.
 
 ## Evidence on Hand
 

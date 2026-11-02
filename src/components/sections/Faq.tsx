@@ -42,6 +42,10 @@ export const faqs = [
     a: "No. Plans are month to month with no set-up fee; cancel any time and your plan ends at the end of the month you’ve paid for. The founding pilot is a single month at A$299 and nothing renews automatically: around day 25 we ask what you’d like to do. If we’re not earning our keep, you should leave, and we’ll make that easy."
   },
   {
+    q: "What is the Reputrail Score?",
+    a: "A number out of 100 on your monthly report that measures how well your reputation and customer feedback are being managed: review management (25), customer recovery (30), reputation growth (25), and the quality of insight and reporting (20). It never marks you down for a legitimate negative review. A two-star review that was answered within a day, escalated and resolved earns full marks. Where we don’t have the data to assess a component, we say so instead of guessing.",
+  },
+  {
     q: "How do you handle my customers’ information?",
     a: "We collect the minimum: a name and contact detail to send a review request you’ve asked for, and the public text of reviews. We never sell or share it, we delete it when you leave, and our privacy policy sets out the details. Requests always include an unsubscribe, as the Spam Act requires.",
   },

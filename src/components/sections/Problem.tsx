@@ -41,8 +41,9 @@ export function Problem() {
 
         <Reveal className="mt-14 max-w-[40rem] border-t rule pt-8 md:mt-16">
           <p className="text-heading text-ink">
-            Reputrail takes that job off your plate. We look after your reputation, so you can
-            look after your business.
+            Reputrail takes that job off your plate. We make sure no complaint, piece of feedback
+            or reputation opportunity falls through the cracks, and we show you exactly what we’re
+            doing about it.
           </p>
         </Reveal>
       </div>

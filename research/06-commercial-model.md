@@ -76,6 +76,24 @@ Assumptions: plan mix 30% Essential, 55% Managed, 15% Premium (blended A$484/cus
 
 With a virtual assistant at A$30/hour taking 60% of delivery hours from customer 8 onward, contribution at 20 customers falls to roughly A$7,800/month but founder time stays at 8–10 hours/week. That is the realistic "alongside full-time employment" ceiling: about A$90–100k a year of contribution at 20 customers with one contractor.
 
+## 4a. Onboarding time, review volume and acquisition assumptions (phase 2)
+
+**Onboarding** (SOP 1 in `business/manual-operating-procedures.md`, checklist in `business/onboarding-checklist.md`): about 5 founder hours in a client's first month (agreement and authorisation 0.5h, set-up call 0.5h plus notes 0.5h, access and folder set-up 0.5h, logging and classifying existing reviews 1–1.5h, catch-up replies and first request batch 1.5–2h). Schedule pilots at least a week apart; three pilots starting in one month would consume most of a 5–8-hour week on their own.
+
+**Review volume sensitivity** (hours per client per month, Managed tier, with templates and standing approval on five-star reviews):
+
+| Reviews/client/month | Monitoring share | Drafting and approvals (10 min each) | Escalations (20% × 40 min) | Requests, report, calls | Total h | API cost (file 07) |
+|---:|---:|---:|---:|---:|---:|---:|
+| 20 | 1.0 | 3.3 | 2.7 | 1.5 | ~8.5 → ~4.0 after month 2* | A$0.30 |
+| 50 | 1.0 | 8.3 | 6.7 | 1.5 | ~17.5 → ~9 after month 2* | A$0.70 |
+| 100 | 1.0 | 16.7 | 13.3 | 1.5 | ~32 → ~17 after month 2* | A$1.35 |
+
+\*After month two, standing approval on positive reviews and settled templates cut drafting time by about half and escalations by a third; the right-hand figures are the steady-state ESTIMATE. A 100-review-per-month client is a Premium client with a dedicated assistant, not a founder-only account. Tokens are irrelevant at every volume; hours are everything.
+
+**Customer acquisition assumptions** (ESTIMATE): 20 verified prospects → 10 owner conversations → 6 free audits → 2–3 pilots; about 4 founder hours per won customer; zero cash cost beyond travel. Warm introductions convert at roughly double the rate of cold contact (HYPOTHESIS to measure).
+
+**Maximum manageable load alongside full-time employment**: 6–8 Managed clients at 40 reviews a month on 5–8 hours a week; 10 with a part-time assistant for monitoring and logging; beyond 12 the founder is running an agency.
+
 ## 5. Churn sensitivity
 
 Monthly churn assumptions for a month-to-month trades service: 3% (good), 6% (base), 10% (poor). Starting from 10 customers with 1.5 new customers added per month:

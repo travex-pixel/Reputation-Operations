@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Services } from "@/components/sections/Services";
 import { Industries } from "@/components/sections/Industries";
 import { ExampleAudit } from "@/components/sections/ExampleAudit";
+import { Success } from "@/components/sections/Success";
 import { Why } from "@/components/sections/Why";
 import { Faq, faqs } from "@/components/sections/Faq";
 import { Founder } from "@/components/sections/Founder";
@@ -49,6 +50,7 @@ export default function HomePage() {
         <Industries />
         <Services />
         <ExampleAudit />
+        <Success />
         <Why />
         <Founder />
         <Faq />

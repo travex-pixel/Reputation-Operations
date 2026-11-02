@@ -74,6 +74,7 @@ export const nav = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#services", label: "Services" },
   { href: "/#example-audit", label: "Example audit" },
+  { href: "/#success", label: "How we measure" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#founder", label: "Talk to us" },
 ] as const;

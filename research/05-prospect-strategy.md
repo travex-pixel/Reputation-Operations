@@ -1,5 +1,7 @@
 # 05 — Prospect strategy
 
+> **Superseded in part (phase 2):** the enriched database is `prospect-list-v2.csv` (32 fields, 50 rows), the ranked top 15 with individual audits is `prospect-audits/README.md`, and the method and limitations are in `prospect-intelligence-notes.md`. The outreach sequence, weekly cadence and measures below still apply; the top-10 table is the first-pass list and is kept for traceability.
+
 Goal: ten genuine conversations with Sydney trade owners, not fifty generic emails. The CSV at `prospect-list.csv` holds 50 scored prospects; `raw-prospect-notes.md` holds the research agent's method notes and per-prospect rationale. This file turns them into a plan.
 
 ## How the list was built, and what it is not

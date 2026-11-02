@@ -51,4 +51,10 @@ next-env.d.ts
 .impeccable/review/d-*.png
 .impeccable/review/m-*.png
 .impeccable/review/*-tablet.png
+.impeccable/review/workspace/*.png
+!.impeccable/review/workspace/overview.png
+!.impeccable/review/workspace/ops-reviews.png
+!.impeccable/review/workspace/report-print.png
+!.impeccable/review/workspace/audit-print.png
+!.impeccable/review/workspace/prospects.png
 .impeccable/review/notfound-*.png

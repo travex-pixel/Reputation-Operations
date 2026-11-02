@@ -89,6 +89,10 @@ One authored moment (the record). Supporting motion only for feedback and quiet 
 
 WCAG 2.2 AA. Verified with axe-core (0 violations on `/`, `/audit`, `/privacy` at 390 and 1440) and the Impeccable detector (0 anti-patterns at 390 and 1280). Skip link, landmark `main`, one `h1` per page, labelled controls, keyboard-operable FAQ (`details/summary`), focusable scroll region for the comparison table, 44px targets on mobile.
 
+## Workspace (Operate mode)
+
+`/workspace` reuses the tokens with an Operate-mode register: white raised surfaces (`.ws-card`, `.ws-card-raised`) with a 1px top highlight and layered soft shadows, a glossy amber primary (`.ws-btn-primary`), a quietly lit green top bar (`.ws-topbar`), document surfaces with a faint paper reflection (`.ws-doc`) for audits and reports, compact fields (`.ws-field`), status chips, meters, and a `@media print` block that strips chrome for PDF export. Tables from `md` up; stacked cards below. Styles live in `src/app/workspace/workspace.css`; primitives in `src/components/workspace/ui.tsx`.
+
 ## Content rules
 
 Australian English. Second person. No kickers or eyebrow labels above headings. Mono uppercase labels only as document headers or data field names. Every illustrative figure labelled as such. No statistics without a source in `/research`. Curly apostrophes and quotes.
