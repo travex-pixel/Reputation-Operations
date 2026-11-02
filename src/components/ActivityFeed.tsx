@@ -108,11 +108,11 @@ export function ActivityFeed({ className = "" }: { className?: string }) {
         </ol>
 
         <div
-          className="record-entry flex items-center justify-between gap-4 border-t rule bg-ground-sunken/60 px-5 py-3 text-[0.8125rem] text-ink-faint"
+          className="record-entry flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-t rule bg-ground-sunken/60 px-5 py-3 text-[0.8125rem] text-ink-faint"
           style={{ "--i": entries.length } as React.CSSProperties}
         >
-          <span>Nothing published without your approval</span>
-          <span>Answered the next working morning</span>
+          <span className="whitespace-nowrap">Nothing published without your approval</span>
+          <span className="whitespace-nowrap">Answered the next working morning</span>
         </div>
       </figure>
     </RecordMotion>
