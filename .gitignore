@@ -58,3 +58,6 @@ next-env.d.ts
 !.impeccable/review/workspace/audit-print.png
 !.impeccable/review/workspace/prospects.png
 .impeccable/review/notfound-*.png
+
+# Impeccable design skill: engine binary is downloaded/built locally; runtime state stays out of git
+.claude/skills/impeccable/scripts/bin/

@@ -60,7 +60,11 @@ Node 20+ is required. No environment variables are needed for local development:
 
 The site was built with the [Impeccable](https://github.com/pbakaus/impeccable) design method (direction contract, craft floor, finish review) and checked against Vercel's Web Interface Guidelines. QA evidence in `.impeccable/review/`: screenshots at 390, 820 and 1440 wide for every route and state; Impeccable detector 0 anti-patterns; axe-core 0 violations; keyboard, reduced-motion, no-JS and form-state tests via Playwright. Workspace evidence in `.impeccable/review/workspace/`: a 39-check Playwright run covering the passcode gate, prospect filtering, sorting, stage changes and persistence, detail edits, audit generation and print view, client creation, review logging, rules classification, drafting, the approval chain, recovery tracking, insights, report prefill and generation, backup export, and mobile overflow.
 
-To rerun the detector locally after installing Impeccable (`npx impeccable install`): `npx impeccable detect http://localhost:3000` and `npx impeccable detect --viewport 390x844 http://localhost:3000`.
+### Skills committed in `.claude/`
+
+As in the NewApp repository, the Impeccable skill (4.8.0) and its four helper agents are committed under `.claude/skills/impeccable` and `.claude/agents/`, alongside Vercel's `web-design-guidelines`, `vercel-react-best-practices`, `vercel-composition-patterns` and `deploy-to-vercel` skills. Every Claude Code session on this repo can run `/impeccable critique`, `/impeccable audit`, `/impeccable polish` and the rest. The engine binary is gitignored; the launcher downloads it on first run (`impeccable.style`), or build it from source with `cargo build --release -p impeccable` in a clone of pbakaus/impeccable and place it at `.claude/skills/impeccable/scripts/bin/linux-x64/impeccable` (or `darwin-arm64` on a Mac). No design hook is configured in `.claude/settings.json`; run `npx impeccable install` locally if you want the automatic post-edit checks.
+
+To scan the running site: `.claude/skills/impeccable/scripts/impeccable detect http://localhost:3000` and `... detect --viewport 390x844 http://localhost:3000`.
 
 ## Fonts and licences
 

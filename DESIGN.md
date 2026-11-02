@@ -2,7 +2,7 @@
 
 World: **the dated, signed-off service record.** The page is the record a person keeps of your reputation. Everything below was documented from the built site (`src/app/globals.css`, `src/components/**`). Tokens live in `globals.css` under `:root` and are exposed to Tailwind v4 through `@theme inline`.
 
-## Colour
+## Colors (colour tokens)
 
 Strategy: *Committed.* The deep green field carries roughly a third of the page (hero, pricing, "Why", close); chalk carries the reading sections; one amber is reserved for the primary action and sign-off marks.
 
