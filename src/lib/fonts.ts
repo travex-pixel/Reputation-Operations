@@ -1,20 +1,22 @@
 import localFont from "next/font/local";
 
 /**
- * Bricolage Grotesque (OFL) — variable, optical size + weight.
- * Width axis pinned to 100 at build time to keep the file small.
+ * Instrument Sans (OFL) — one family for the whole public site: display,
+ * body and labels. Variable weight 400–700; width pinned to 100 at build.
+ * Self-hosted; no third-party font requests.
  */
-export const bricolage = localFont({
-  src: "../fonts/BricolageGrotesque-var.woff2",
-  variable: "--font-bricolage",
+export const instrument = localFont({
+  src: [
+    { path: "../fonts/InstrumentSans-var.woff2", weight: "400 700", style: "normal" },
+    { path: "../fonts/InstrumentSans-Italic-var.woff2", weight: "400 700", style: "italic" },
+  ],
+  variable: "--font-instrument",
   display: "swap",
-  weight: "200 800",
-  style: "normal",
   preload: true,
   adjustFontFallback: "Arial",
 });
 
-/** JetBrains Mono (OFL) — record data only: timestamps, counts, statuses. */
+/** JetBrains Mono (OFL) — record data in the internal workspace only. */
 export const jetbrains = localFont({
   src: "../fonts/JetBrainsMono-var.woff2",
   variable: "--font-jetbrains",

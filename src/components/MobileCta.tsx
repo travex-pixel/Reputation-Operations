@@ -5,10 +5,10 @@ import { ButtonLink } from "./Button";
 
 /**
  * A thin bottom action bar on phones and tablets. Appears once the hero's own
- * button has scrolled away and hides again near the closing call to action,
- * so it never covers the same button twice. Respects the safe-area inset.
+ * button has scrolled away and hides again from the closing call to action
+ * onwards, so it never covers the same button twice. Respects the safe-area inset.
  */
-export function MobileCta({ heroId = "hero-heading", endId = "cta-heading" }: { heroId?: string; endId?: string }) {
+export function MobileCta({ heroId = "hero-heading", endId = "cta" }: { heroId?: string; endId?: string }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,8 @@ export function MobileCta({ heroId = "hero-heading", endId = "cta-heading" }: { 
       (entries) => {
         for (const e of entries) {
           if (e.target === hero) heroOut = !e.isIntersecting && e.boundingClientRect.bottom < 0;
-          if (e.target === end) endIn = e.isIntersecting;
+          // Hidden while the closing section is on screen and once it has scrolled past (the footer).
+          if (e.target === end) endIn = e.isIntersecting || e.boundingClientRect.top < 0;
         }
         update();
       },
@@ -41,7 +42,7 @@ export function MobileCta({ heroId = "hero-heading", endId = "cta-heading" }: { 
       }`}
     >
       <div className="mx-auto flex max-w-xl items-center justify-between gap-4">
-        <p className="hidden text-small text-ink-soft sm:block">Free, no obligation, two working days.</p>
+        <p className="hidden text-small text-ink-soft sm:block">Free. No obligation. Two working days.</p>
         <ButtonLink href="/audit" className="w-full sm:w-auto" tabIndex={visible ? 0 : -1}>
           Get your free reputation audit
         </ButtonLink>

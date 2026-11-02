@@ -61,3 +61,4 @@ next-env.d.ts
 
 # Impeccable design skill: engine binary is downloaded/built locally; runtime state stays out of git
 .claude/skills/impeccable/scripts/bin/
+.impeccable/review/sec-*.png

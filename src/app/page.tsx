@@ -2,14 +2,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Problem } from "@/components/sections/Problem";
+import { Experience } from "@/components/sections/Experience";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { Services } from "@/components/sections/Services";
-import { Industries } from "@/components/sections/Industries";
-import { ExampleAudit } from "@/components/sections/ExampleAudit";
-import { Success } from "@/components/sections/Success";
-import { Why } from "@/components/sections/Why";
-import { Faq, faqs } from "@/components/sections/Faq";
+import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
+import { WhatWeHandle } from "@/components/sections/WhatWeHandle";
+import { Pricing } from "@/components/sections/Pricing";
+import { FreeAudit } from "@/components/sections/FreeAudit";
+import { Differentiation } from "@/components/sections/Differentiation";
 import { Founder } from "@/components/sections/Founder";
+import { Faq, faqs } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { MobileCta } from "@/components/MobileCta";
 import { site } from "@/lib/site";
@@ -42,26 +43,24 @@ export default function HomePage() {
 
   return (
     <>
-      <Header onField />
+      <Header />
       <main id="main">
         <Hero />
         <Problem />
+        <Experience />
         <HowItWorks />
-        <Industries />
-        <Services />
-        <ExampleAudit />
-        <Success />
-        <Why />
+        <WhoWeHelp />
+        <WhatWeHandle />
+        <Pricing />
+        <FreeAudit />
+        <Differentiation />
         <Founder />
         <Faq />
         <FinalCta />
       </main>
       <Footer />
       <MobileCta />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );
 }

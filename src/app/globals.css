@@ -2,68 +2,75 @@
 
 /* ------------------------------------------------------------------
    Reputrail design tokens
-   World: the dated, signed-off service record.
+   Palette pinned by the brief: warm off-white ground, near-black ink,
+   muted charcoal secondary, warm grey hairlines, one deep forest-green
+   accent used sparingly. One typeface. Generous whitespace.
    ------------------------------------------------------------------ */
 :root {
   color-scheme: light;
 
-  /* Field: deep bottle green, carries hero, plans and close */
-  --field: #0f2c25;
-  --field-deep: #0a1f1a;
-  --field-raised: #163b32;
+  --ground: #faf9f6;
+  --ground-raised: #ffffff;
+  --ground-sunken: #f2f0eb;
 
-  /* Ground: cool chalk, tinted from the green hue */
-  --ground: #eef1ec;
-  --ground-raised: #f7f8f5;
-  --ground-sunken: #e3e8e2;
+  --ink: #171717;
+  --ink-soft: #5f5f5f;
+  --ink-faint: #6b6b6b;
 
-  /* Ink */
-  --ink: #0b1c17;
-  --ink-soft: #3f524b;
-  --ink-faint: #56675f;
-  --ink-on-field: #eaf2ec;
-  --ink-on-field-soft: #a3bfb2;
+  --line: #e9e7e2;
+  --line-strong: #d6d3cc;
 
-  /* Lines */
-  --line: #c9d3cc;
-  --line-strong: #9fb0a6;
-  --line-on-field: rgb(234 242 236 / 0.14);
-  --line-on-field-strong: rgb(234 242 236 / 0.28);
+  --accent: #315b49;
+  --accent-deep: #27493b;
+  --accent-soft: #eaf0ec;
 
-  /* Accents */
-  --stamp: #e9a23b; /* sign-off amber: primary action + marks only */
-  --stamp-deep: #c9851f;
-  --stamp-ink: #4a2e03; /* amber-derived text on light ground */
-  --green-mid: #1f5a48; /* links and interactive on light */
-  --green-bright: #3f8f74;
-  --signal: #c8553d; /* negative review marker only */
-  --signal-ink: #a8412a; /* error text on light ground */
-  --signal-on-field: #ef8a70;
+  /* Dark surfaces (workspace top bar, report score block). */
+  --field: #315b49;
+  --field-deep: #27493b;
+  --field-raised: #3c6b57;
+  --ink-on-field: #f7f7f4;
+  --ink-on-field-soft: #c9d8d0;
+  --line-on-field: rgb(247 247 244 / 0.16);
+  --line-on-field-strong: rgb(247 247 244 / 0.3);
+
+  /* Highlights on dark surfaces and warm status text. */
+  --stamp: #bfe0cf;
+  --stamp-deep: #315b49;
+  --stamp-ink: #7a5a1e;
+  --green-mid: #315b49;
+  --green-bright: #4f8c72;
+
+  --signal: #b5483a;
+  --signal-ink: #9a3b2e;
+  --signal-on-field: #f0a595;
 
   --radius: 6px;
-  --radius-lg: 10px;
+  --radius-lg: 12px;
 
-  --shadow-lift: 0 1px 2px rgb(11 28 23 / 0.08), 0 8px 24px -12px rgb(11 28 23 / 0.25);
-  --shadow-float: 0 2px 4px rgb(11 28 23 / 0.1), 0 24px 48px -16px rgb(11 28 23 / 0.35);
+  --shadow-lift: 0 1px 2px rgb(23 23 23 / 0.04), 0 8px 24px -16px rgb(23 23 23 / 0.18);
+  --shadow-float: 0 1px 2px rgb(23 23 23 / 0.05), 0 24px 56px -28px rgb(23 23 23 / 0.28);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @theme inline {
-  --color-field: var(--field);
-  --color-field-deep: var(--field-deep);
-  --color-field-raised: var(--field-raised);
   --color-ground: var(--ground);
   --color-ground-raised: var(--ground-raised);
   --color-ground-sunken: var(--ground-sunken);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
-  --color-ink-on-field: var(--ink-on-field);
-  --color-ink-on-field-soft: var(--ink-on-field-soft);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-soft: var(--accent-soft);
+  --color-field: var(--field);
+  --color-field-deep: var(--field-deep);
+  --color-field-raised: var(--field-raised);
+  --color-ink-on-field: var(--ink-on-field);
+  --color-ink-on-field-soft: var(--ink-on-field-soft);
   --color-line-on-field: var(--line-on-field);
   --color-line-on-field-strong: var(--line-on-field-strong);
   --color-stamp: var(--stamp);
@@ -75,7 +82,7 @@
   --color-signal-ink: var(--signal-ink);
   --color-signal-on-field: var(--signal-on-field);
 
-  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 
   --radius-sm: var(--radius);
@@ -87,31 +94,36 @@
   --ease-out-expo: var(--ease-out-expo);
   --ease-out-quart: var(--ease-out-quart);
 
-  /* Type roles (fluid) */
-  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4rem);
+  /* Type roles (fluid). One family; weight and size carry hierarchy. */
+  --text-display: clamp(2.75rem, 1.7rem + 4.6vw, 4.5rem);
   --text-display--line-height: 1.02;
   --text-display--letter-spacing: -0.035em;
   --text-display--font-weight: 600;
 
-  --text-title: clamp(1.875rem, 1.3rem + 2.3vw, 3rem);
+  --text-title: clamp(1.875rem, 1.35rem + 2.3vw, 3rem);
   --text-title--line-height: 1.08;
   --text-title--letter-spacing: -0.028em;
   --text-title--font-weight: 600;
 
-  --text-heading: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-heading: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
   --text-heading--line-height: 1.3;
-  --text-heading--letter-spacing: -0.015em;
+  --text-heading--letter-spacing: -0.012em;
   --text-heading--font-weight: 600;
 
-  --text-lede: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-lede: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
   --text-lede--line-height: 1.5;
-  --text-lede--letter-spacing: -0.008em;
+  --text-lede--letter-spacing: -0.006em;
 
   --text-body: 1.0625rem;
   --text-body--line-height: 1.6;
 
   --text-small: 0.9375rem;
   --text-small--line-height: 1.5;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.12em;
+  --text-label--font-weight: 500;
 
   --text-mono: 0.8125rem;
   --text-mono--line-height: 1.4;
@@ -142,23 +154,22 @@
     font-family: var(--font-sans);
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
-    font-variation-settings: "opsz" 14;
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings: "kern", "liga", "calt";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: rgb(233 162 59 / 0.25);
-    caret-color: var(--stamp-deep);
+    -webkit-tap-highlight-color: rgb(49 91 73 / 0.15);
+    caret-color: var(--accent);
   }
 
   ::selection {
-    background: rgb(233 162 59 / 0.35);
+    background: rgb(49 91 73 / 0.18);
     color: var(--ink);
   }
 
   .on-field ::selection {
-    background: rgb(233 162 59 / 0.45);
-    color: var(--field-deep);
+    background: rgb(247 247 244 / 0.28);
+    color: var(--ink-on-field);
   }
 
   h1,
@@ -166,7 +177,6 @@
   h3,
   h4 {
     text-wrap: balance;
-    font-variation-settings: "opsz" 96;
   }
 
   p {
@@ -187,17 +197,17 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--stamp);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   .on-field :focus-visible {
-    outline-color: var(--stamp);
+    outline-color: var(--ink-on-field);
   }
 
   [id] {
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: 5rem;
   }
 
   button,
@@ -239,13 +249,13 @@
 @utility container-x {
   width: 100%;
   margin-inline: auto;
-  max-width: 76rem;
+  max-width: 72rem;
   padding-inline: 1.25rem;
   @media (width >= 48rem) {
-    padding-inline: 2rem;
+    padding-inline: 2.5rem;
   }
   @media (width >= 80rem) {
-    padding-inline: 2.5rem;
+    padding-inline: 3rem;
   }
 }
 
@@ -253,37 +263,28 @@
   font-variant-numeric: tabular-nums;
 }
 
-@utility opsz-display {
-  font-variation-settings: "opsz" 96;
-}
-
-@utility opsz-text {
-  font-variation-settings: "opsz" 14;
-}
-
 @utility text-pretty {
   text-wrap: pretty;
 }
 
-/* Tag silhouette: the punched hole is drawn with a radial mask */
-@utility tag-shape {
-  position: relative;
-  border-radius: var(--radius-lg);
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0.9rem;
-    left: 50%;
-    width: 0.625rem;
-    height: 0.625rem;
-    transform: translateX(-50%);
-    border-radius: 999px;
-    background: var(--ground);
-    box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.35);
-  }
+/* Kept for the workspace, which was written against the earlier optical-size axis. */
+@utility opsz-display {
+  letter-spacing: -0.02em;
 }
 
-/* Hairline rule tinted from the hue */
+@utility opsz-text {
+  letter-spacing: 0;
+}
+
+/* Small uppercase label (eyebrow, column headings, statuses). */
+@utility label {
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  letter-spacing: var(--text-label--letter-spacing);
+  font-weight: var(--text-label--font-weight);
+  text-transform: uppercase;
+}
+
 @utility rule {
   border-color: var(--line);
 }
@@ -292,45 +293,49 @@
   border-color: var(--line-on-field);
 }
 
+/* Legacy name used by the workspace commitments panel. */
+@utility tag-shape {
+  border-radius: var(--radius-lg);
+}
+
 /* ------------------------------------------------------------------
-   Motion
-   The record stamps in once; everything else reveals quietly.
+   Motion. Gentle, once, interruptible. One authored moment: the record.
    ------------------------------------------------------------------ */
 @keyframes stamp-in {
   from {
     opacity: 0;
-    transform: translateY(6px) scale(1.03);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 @keyframes mark-in {
   from {
     opacity: 0;
-    transform: rotate(-10deg) scale(1.35);
+    transform: scale(0.92);
   }
   to {
     opacity: 1;
-    transform: rotate(-6deg) scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes rule-draw {
   from {
-    transform: scaleX(0);
+    transform: scaleY(0);
   }
   to {
-    transform: scaleX(1);
+    transform: scaleY(1);
   }
 }
 
 @keyframes reveal {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -340,8 +345,22 @@
 
 .record-entry {
   opacity: 0;
-  animation: stamp-in 420ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 380ms + 300ms);
+  animation: stamp-in 520ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 340ms + 200ms);
+}
+
+.record-entry .record-rule {
+  transform-origin: top center;
+  animation: rule-draw 520ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 340ms + 260ms);
+  transform: scaleY(0);
+}
+
+.record-mark {
+  opacity: 0;
+  animation: mark-in 420ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 340ms + 420ms);
+  transform-origin: center;
 }
 
 /* With JS, hold the sequence until the record is on screen. */
@@ -357,32 +376,37 @@
   animation-play-state: running;
 }
 
-.record-entry .record-rule {
-  transform-origin: left center;
-  animation: rule-draw 600ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 380ms + 360ms);
-  transform: scaleX(0);
-}
-
-.record-mark {
-  opacity: 0;
-  animation: mark-in 460ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 380ms + 560ms);
-  transform-origin: center;
-}
-
 .reveal {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(10px);
   transition:
-    opacity 700ms var(--ease-out-quart),
-    transform 700ms var(--ease-out-quart);
+    opacity 640ms var(--ease-out-quart),
+    transform 640ms var(--ease-out-quart);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Accordion: animate height with the modern details API where supported. */
+details.faq::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 320ms var(--ease-out-quart),
+    content-visibility 320ms allow-discrete;
+}
+
+details.faq[open]::details-content {
+  block-size: auto;
+}
+
+@supports (interpolate-size: allow-keywords) {
+  details.faq {
+    interpolate-size: allow-keywords;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -396,12 +420,12 @@
     opacity: 1;
     transform: none;
   }
-  .record-mark {
-    transform: rotate(-6deg);
-  }
   .reveal {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+  details.faq::details-content {
     transition: none;
   }
 }

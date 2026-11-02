@@ -62,7 +62,7 @@ export function AuditDocument({ audit }: { audit: Audit }) {
           <ul className="mt-2 grid gap-1.5 text-small text-ink-soft">
             {a.improvementOpportunities.map((t, k) => (
               <li key={k} className="grid grid-cols-[0.75rem_1fr] gap-2">
-                <span aria-hidden="true" className="mt-[0.45rem] h-1.5 w-1.5 rounded-full bg-stamp" />
+                <span aria-hidden="true" className="mt-[0.45rem] h-1.5 w-1.5 rounded-full bg-accent" />
                 <span>{t}</span>
               </li>
             ))}

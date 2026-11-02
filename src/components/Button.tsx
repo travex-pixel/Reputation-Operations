@@ -1,22 +1,23 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost" | "primary-light";
+type Variant = "primary" | "secondary" | "ghost" | "primary-light" | "on-field";
 type Size = "md" | "lg" | "sm";
 
 const base =
-  "group/btn inline-flex items-center justify-center gap-2 rounded-sm font-semibold tracking-[-0.01em] transition-[transform,background-color,color,box-shadow] duration-200 ease-out-quart select-none disabled:pointer-events-none disabled:opacity-60 active:translate-y-0";
+  "group/btn inline-flex items-center justify-center gap-2 rounded-sm font-medium tracking-[-0.005em] transition-[transform,background-color,color,border-color,box-shadow] duration-200 ease-out-quart select-none disabled:pointer-events-none disabled:opacity-60 active:translate-y-0";
 
 const variants: Record<Variant, string> = {
-  /** Amber on the green field — the one primary action. */
-  primary:
-    "bg-stamp text-field-deep shadow-lift hover:bg-[#f0b057] hover:-translate-y-px hover:shadow-float",
-  /** Same amber action on the chalk ground: one action, one colour. */
-  "primary-light":
-    "bg-stamp text-field-deep shadow-lift hover:bg-[#f0b057] hover:-translate-y-px hover:shadow-float",
+  /** The one primary action: deep forest green, white text. */
+  primary: "bg-accent text-white shadow-lift hover:bg-accent-deep hover:-translate-y-px",
+  /** Alias kept for existing call sites. */
+  "primary-light": "bg-accent text-white shadow-lift hover:bg-accent-deep hover:-translate-y-px",
+  /** Quiet outlined action. */
   secondary:
     "border border-line-strong bg-transparent text-ink hover:border-ink hover:bg-ground-raised hover:-translate-y-px",
   ghost: "bg-transparent text-ink hover:bg-ground-sunken",
+  /** On a dark surface. */
+  "on-field": "bg-ink-on-field text-accent-deep shadow-lift hover:bg-white hover:-translate-y-px",
 };
 
 const sizes: Record<Size, string> = {
@@ -41,11 +42,7 @@ export function ButtonLink({
   ...rest
 }: CommonProps & { href: string } & Omit<ComponentPropsWithoutRef<typeof Link>, "href">) {
   return (
-    <Link
-      href={href}
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...rest}
-    >
+    <Link href={href} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...rest}>
       {children}
     </Link>
   );
@@ -60,11 +57,7 @@ export function Button({
   ...rest
 }: CommonProps & ComponentPropsWithoutRef<"button">) {
   return (
-    <button
-      type={type}
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...rest}
-    >
+    <button type={type} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...rest}>
       {children}
     </button>
   );
@@ -79,13 +72,7 @@ export function Arrow({ className = "h-4 w-4" }: { className?: string }) {
       aria-hidden="true"
       focusable="false"
     >
-      <path
-        d="M3 8h9.5M8.5 4l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M3 8h9.5M8.5 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -105,10 +92,8 @@ export function TextLink({
   return (
     <Link
       href={href}
-      className={`group/link inline-flex min-h-11 items-center gap-1.5 rounded-sm font-semibold underline-offset-[5px] decoration-1 transition-colors duration-200 hover:underline ${
-        onField
-          ? "text-ink-on-field decoration-ink-on-field-soft"
-          : "text-green-mid decoration-line-strong hover:text-ink"
+      className={`group/link inline-flex min-h-11 items-center gap-1.5 rounded-sm font-medium underline-offset-[6px] decoration-1 transition-colors duration-200 hover:underline ${
+        onField ? "text-ink-on-field decoration-ink-on-field-soft" : "text-ink decoration-line-strong hover:text-accent"
       } ${className}`}
     >
       {children}

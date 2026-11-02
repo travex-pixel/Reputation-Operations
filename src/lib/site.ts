@@ -6,7 +6,7 @@ export const site = {
   name: "Reputrail",
   tagline: "Your reputation. In good hands.",
   description:
-    "Reputrail is a managed online-reputation service for Sydney trade businesses. A real person watches your reviews, drafts replies for your approval, escalates the bad ones the same day and helps you win the customer back.",
+    "Human-led reputation management for Sydney trade businesses. We look after your reviews, respond to customers and help resolve complaints before they cost you the next job.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://reputrail.com.au",
   locale: "en-AU",
   region: "Sydney, NSW",
@@ -21,21 +21,20 @@ export const site = {
   /** Business identifiers shown in the footer once registered. */
   abn: "" as string,
   pricing: {
-    pilot: { label: "Founding customer pilot", price: 299, period: "for 30 days" },
+    pilot: { label: "Founding customer pilot", price: 299, period: "for the first 30 days" },
     plans: [
       {
         id: "essential",
         name: "Essential",
         price: 299,
-        summary: "Reviews watched and answered, every working day.",
+        summary: "Your reviews watched and answered.",
         includes: [
-          "Initial reputation audit",
           "Google, hipages and Facebook checked every working day",
-          "Reply drafts in your words, published only with your approval",
-          "Same-day escalation of negative reviews",
-          "Monthly one-page report",
+          "Replies drafted in your voice, published with your approval",
+          "Negative reviews escalated to you the same working day",
+          "One-page monthly report",
         ],
-        fit: "Owner-operators and small crews who mainly need the reviews handled.",
+        fit: "Owner-operators and small crews.",
       },
       {
         id: "managed",
@@ -44,27 +43,25 @@ export const site = {
         summary: "Everything in Essential, plus winning customers back.",
         includes: [
           "Everything in Essential",
-          "Customer-recovery coordination: we help you plan the call and follow up",
-          "Genuine review-request workflow for completed jobs",
-          "Quarterly competitor reputation check",
-          "Priority phone escalation",
+          "Customer recovery: we prepare the call, you make it",
+          "Genuine review requests after completed jobs",
+          "Quarterly competitor check",
         ],
-        fit: "Businesses with 3–15 staff and a steady flow of jobs and reviews.",
+        fit: "Businesses with 3 to 15 staff and a steady flow of jobs.",
         featured: true,
       },
       {
         id: "premium",
         name: "Premium",
         price: 799,
-        summary: "For multi-crew operators who win work on reputation.",
+        summary: "For operators who win work on reputation.",
         includes: [
           "Everything in Managed",
-          "Monthly competitor monitoring and sentiment analysis",
+          "Monthly competitor and customer-feedback insights",
           "Complaint and warranty follow-up coordination",
-          "Multi-location or multi-brand profiles",
-          "Monthly 30-minute review call with the founder",
+          "Monthly 30-minute review call",
         ],
-        fit: "Multi-crew and multi-location operators where reputation drives tender and referral work.",
+        fit: "Multi-crew or multi-location businesses.",
       },
     ],
   },
@@ -72,36 +69,34 @@ export const site = {
 
 export const nav = [
   { href: "/#how-it-works", label: "How it works" },
-  { href: "/#services", label: "Services" },
-  { href: "/#example-audit", label: "Example audit" },
-  { href: "/#success", label: "How we measure" },
+  { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/#founder", label: "Talk to us" },
 ] as const;
 
 export const trades = [
+  { name: "Plumbers", why: "Emergency callers choose on rating and recency within minutes." },
+  { name: "Electricians", why: "Safety and licensing make trust the whole sale." },
+  { name: "Air conditioning", why: "Big installs, seasonal rushes and warranty callbacks." },
+  { name: "Builders and renovators", why: "Long jobs, big deposits, nervous clients." },
+  { name: "Landscapers", why: "Finish is judged in photos; referrals are the pipeline." },
+  { name: "Roofers and other home services", why: "Urgent, high-value work from people who check first." },
+] as const;
+
+export const serviceGroups = [
   {
-    name: "Air conditioning",
-    why: "Big-ticket installs, seasonal rushes and warranty callbacks generate the most emotional reviews of any trade.",
+    name: "Review management",
+    items: ["Every review read by a person, every working day", "Replies drafted in your voice", "Nothing published without your approval"],
   },
   {
-    name: "Plumbers",
-    why: "Emergency callers choose on rating and recency within minutes. Response speed and tone decide who they ring next time.",
+    name: "Customer recovery",
+    items: ["Negative reviews escalated the same working day", "A short brief before you ring the customer", "Outcomes recorded and followed up"],
   },
   {
-    name: "Electricians",
-    why: "Safety and licensing make trust the whole sale. Unanswered complaints read as evasion.",
+    name: "Reputation growth",
+    items: ["Honest review requests after completed jobs", "Every nominated customer asked, not just the happy ones", "Working unsubscribe on every message"],
   },
   {
-    name: "Painters",
-    why: "Finish quality is judged in photos, and a single bad review about mess or missed dates follows you into every quote.",
-  },
-  {
-    name: "Renovators & builders",
-    why: "Long jobs, big deposits and nervous clients. Reputation is the difference between a tender shortlist and a cold call.",
-  },
-  {
-    name: "Roofers",
-    why: "Storm-season work is urgent and high-value; homeowners check reviews before they let anyone on the roof.",
+    name: "Reporting and insights",
+    items: ["One-page report each month", "How you compare with three local competitors", "What customers keep praising and complaining about"],
   },
 ] as const;

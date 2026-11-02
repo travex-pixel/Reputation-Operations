@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { bricolage, jetbrains } from "@/lib/fonts";
+import { instrument, jetbrains } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -36,18 +36,18 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f2c25",
+  themeColor: "#faf9f6",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU" className={`${bricolage.variable} ${jetbrains.variable}`}>
+    <html lang="en-AU" className={`${instrument.variable} ${jetbrains.variable}`}>
       <body className="min-h-dvh antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-stamp focus:px-4 focus:py-2 focus:font-semibold focus:text-field-deep"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
         >
           Skip to main content
         </a>

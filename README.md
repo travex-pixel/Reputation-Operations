@@ -68,7 +68,7 @@ To scan the running site: `.claude/skills/impeccable/scripts/impeccable detect h
 
 ## Fonts and licences
 
-Bricolage Grotesque and JetBrains Mono are used under the SIL Open Font License; copies of the licences are in `src/fonts/`. The fonts are subset and self-hosted; no third-party font requests are made.
+Instrument Sans and JetBrains Mono are used under the SIL Open Font License; copies of the licences are in `src/fonts/`. The fonts are subset and self-hosted; no third-party font requests are made.
 
 ## Non-goals for this release
 
