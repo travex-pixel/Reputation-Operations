@@ -66,6 +66,18 @@ As in the NewApp repository, the Impeccable skill (4.8.0) and its four helper ag
 
 To scan the running site: `.claude/skills/impeccable/scripts/impeccable detect http://localhost:3000` and `... detect --viewport 390x844 http://localhost:3000`.
 
+## Filling the research gaps from Google
+
+Scraping Google Maps breaks Google’s terms, so the repo uses the Places API instead. With a Google Cloud API key that has “Places API (New)” enabled:
+
+```
+GOOGLE_MAPS_API_KEY=your-key node scripts/enrich-places.mjs            # dry run → research/prospect-places-enrichment.csv
+GOOGLE_MAPS_API_KEY=your-key node scripts/enrich-places.mjs --apply    # merge high-confidence matches into prospect-list-v2.csv
+node scripts/build-seed.mjs research/prospect-list-v2.csv                # rebuild the workspace seed
+```
+
+It fetches rating, review count, phone, website, Google Maps link and the five reviews Google returns for each business. Star breakdowns and owner reply rates are not available through the API and still need a person on the listing; the workspace pitch panel lists exactly which fields are blank. `business/chatgpt-prospect-check-prompt.md` is a fallback prompt for ChatGPT with browsing, with a warning about treating its output as unverified.
+
 ## Fonts and licences
 
 Instrument Sans and JetBrains Mono are used under the SIL Open Font License; copies of the licences are in `src/fonts/`. The fonts are subset and self-hosted; no third-party font requests are made.
