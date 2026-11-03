@@ -8,7 +8,7 @@ Managed online-reputation and customer-feedback service for Sydney trade busines
 
 | Path | What |
 |---|---|
-| `src/` | The website (Next.js 16 App Router, TypeScript, Tailwind CSS v4, self-hosted fonts, one server action for the audit form) **and the internal founder workspace at `/workspace`**: prospect database, audit generator, monthly report generator, operations board with a human approval chain, clients, backup/restore. No database, payments or integrations by design; workspace data lives in the founder's browser with JSON export. |
+| `src/` | The website (Next.js 16 App Router, TypeScript, Tailwind CSS v4, self-hosted fonts, one server action for the audit form) **and the internal founder workspace at `/workspace`**: prospect database with a pitch panel (next-touch script by situation, gaps to check, outcome logging), audit generator, monthly report generator, operations board with a human approval chain, clients, backup/restore. No database, payments or integrations by design; workspace data lives in the founder's browser with JSON export. |
 | `src/lib/domain`, `src/lib/ai`, `src/lib/score`, `src/lib/report`, `src/lib/storage` | Domain model, AI boundary (Claude or labelled rules fallback), Reputrail Score, KPI derivation, storage adapter. See `REPUTRAIL_AGENT_ROADMAP.md`. |
 | `REPUTRAIL_AGENT_ROADMAP.md` | How an agent could eventually use the same records and tools, and why not yet. |
 | `FOUNDER_HANDOVER.md` | Phase-2 handover: what works, what is incomplete, how to run and deploy, next 48 hours. |

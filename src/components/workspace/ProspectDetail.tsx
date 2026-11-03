@@ -6,6 +6,7 @@ import { useState } from "react";
 import { PROSPECT_STAGES, TRADES, type Prospect, type ProspectStage, type ResearchStatus, type ResponseQuality, type Trade } from "@/lib/domain/types";
 import { log, today, useHydrated, useWorkspace, ws } from "@/lib/storage/store";
 import { Card, CardTitle, Chip, Empty, Field, Input, Meter, NumberInput, PageHeader, Select, StageChip, TextArea, WsButton, WsLink, fmtDate, fmtDateTime } from "./ui";
+import { PitchPanel } from "./PitchPanel";
 
 const QUALITIES: ResponseQuality[] = ["personalised", "generic", "defensive", "helpful", "absent", "unknown"];
 const STATUSES: ResearchStatus[] = ["unverified", "partial", "verified"];
@@ -241,6 +242,8 @@ function ProspectEditor({ prospect }: { prospect: Prospect }) {
         </div>
 
         <div className="grid content-start gap-6">
+          <PitchPanel prospect={prospect} onApplied={(patch) => setDraft((d) => ({ ...d, ...patch }))} />
+
           <Card raised className="p-5">
             <CardTitle>Pipeline</CardTitle>
             <div className="mb-3">
