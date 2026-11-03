@@ -113,7 +113,13 @@ export function generatePitch(p: Prospect, situation: PitchSituation, founderNam
   const me = founderName.trim() || "[your name]";
   const biz = p.name;
   const area = p.suburb || p.serviceArea || "your area";
-  const trade = p.trade === "Other" ? "trade" : p.trade === "Renovator/Builder" ? "building" : p.trade.toLowerCase();
+  const tradeWords: Partial<Record<Prospect["trade"], string>> = {
+    HVAC: "air conditioning",
+    "Renovator/Builder": "building",
+    "Property maintenance": "property maintenance",
+    Other: "trade",
+  };
+  const trade = tradeWords[p.trade] ?? `${p.trade.toLowerCase()}`;
   const obs = pickObservation(p);
   const gaps = findGaps(p);
   const pilot = site.pricing.pilot;
@@ -139,7 +145,7 @@ export function generatePitch(p: Prospect, situation: PitchSituation, founderNam
           `If they ask the price: ${priceLine}`,
           `If no: "No worries at all. Who else should I be talking to?"`,
         ],
-        tips: [...common, `Best time to ring a ${trade}: ${bestTime}`, "Listen more than you talk. Write down their exact words about the last bad review."],
+        tips: [...common, `Best time to ring an ${trade} business: ${bestTime}`.replace("an plumber", "a plumber").replace("an painter", "a painter").replace("an roofer", "a roofer").replace("an building", "a building").replace("an property", "a property").replace("an trade", "a trade").replace("an landscaper", "a landscaper"), "Listen more than you talk. Write down their exact words about the last bad review."],
       };
     case "voicemail":
       return {
