@@ -6,9 +6,10 @@ export const alt = "Reputrail - Your reputation. In good hands.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function OpenGraphImage() {
-  const font = await readFile(join(process.cwd(), "src/fonts/InstrumentSans-SemiBold-og.ttf"));
+// Read once at build time so the image is generated statically and served as a plain file.
+const font = await readFile(join(process.cwd(), "src/fonts/InstrumentSans-SemiBold-og.ttf"));
 
+export default async function OpenGraphImage() {
   return new ImageResponse(
     <div
       style={{
