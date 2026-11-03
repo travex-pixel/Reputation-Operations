@@ -41,6 +41,7 @@ Node 20+ is required. No environment variables are needed for local development:
    - `AUDIT_WEBHOOK_URL`: where audit requests are POSTed as JSON (`business, name, contact, contactType, listing, source, receivedAt`). A Make/Zapier webhook feeding a Google Sheet, a Formspree endpoint, or any HTTPS URL that returns 2xx. Without it the form degrades honestly.
    - `NEXT_PUBLIC_SITE_URL`: the canonical URL, used for metadata, the link-preview image, sitemap and robots. Set it to `https://reputrail.com.au` in production. When it is unset, Vercel production builds use the project’s production domain and preview builds use their own deployment URL, so link previews still resolve; outside Vercel it defaults to `https://reputrail.com.au`.
    - `WORKSPACE_PASSCODE`: required before deploying; gates `/workspace`.
+   - `GOOGLE_MAPS_API_KEY` (optional): enables “Fetch from Google” in the workspace (Places API (New)); a few cents per lookup.
    - `ANTHROPIC_API_KEY` (optional): enables Claude-assisted classification, drafting and insights in the workspace. Usage is a few cents per client per month; see `research/13-ai-architecture-and-boundaries.md`.
 3. Preview deployments on the Hobby plan are fine while private. Vercel's Hobby plan is for personal, non-commercial use, so move the project to **Vercel Pro** before promoting the site to customers (see `research/10-launch-plan.md`).
 4. Point `reputrail.com.au` (and `reputrail.au`) at the project once the business name and domain are registered.
@@ -68,15 +69,9 @@ To scan the running site: `.claude/skills/impeccable/scripts/impeccable detect h
 
 ## Filling the research gaps from Google
 
-Scraping Google Maps breaks Google’s terms, so the repo uses the Places API instead. With a Google Cloud API key that has “Places API (New)” enabled:
+Scraping Google Maps breaks Google’s terms, so the workspace uses Google’s Places API instead. Set `GOOGLE_MAPS_API_KEY` in Vercel (a key with “Places API (New)” enabled) and redeploy. Then on any prospect record, “Fetch from Google” pulls the rating, review count, phone, website, Maps link and the newest review date and applies them with one click; on the Prospects page, “Fetch from Google for all” does every prospect that has not been fetched, applying clear matches and listing the rest for a check. Star breakdowns and owner reply rates are not available through the API and still need a person on the listing; the pitch panel lists which fields are blank.
 
-```
-GOOGLE_MAPS_API_KEY=your-key node scripts/enrich-places.mjs            # dry run → research/prospect-places-enrichment.csv
-GOOGLE_MAPS_API_KEY=your-key node scripts/enrich-places.mjs --apply    # merge high-confidence matches into prospect-list-v2.csv
-node scripts/build-seed.mjs research/prospect-list-v2.csv                # rebuild the workspace seed
-```
-
-It fetches rating, review count, phone, website, Google Maps link and the five reviews Google returns for each business. Star breakdowns and owner reply rates are not available through the API and still need a person on the listing; the workspace pitch panel lists exactly which fields are blank. `business/chatgpt-prospect-check-prompt.md` is a fallback prompt for ChatGPT with browsing, with a warning about treating its output as unverified.
+`scripts/enrich-places.mjs` does the same from a terminal against the research CSV, and `business/chatgpt-prospect-check-prompt.md` is a fallback prompt for ChatGPT with browsing, with a warning to treat its output as unverified.
 
 ## Fonts and licences
 

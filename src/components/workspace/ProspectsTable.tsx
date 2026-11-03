@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { PROSPECT_STAGES, TRADES, type Prospect, type ProspectStage, type Trade } from "@/lib/domain/types";
 import { log, nowIso, today, uid, useHydrated, useWorkspace, ws } from "@/lib/storage/store";
 import { Card, Chip, Empty, Field, Input, Meter, PageHeader, Select, StageChip, WsButton, fmtDate } from "./ui";
+import { GoogleLookupAll } from "./GoogleLookupAll";
 
 type SortKey = "fitScore" | "reviewCount" | "negativePct" | "ownerResponsePct" | "name" | "updatedAt" | "googleRating";
 
@@ -108,6 +109,10 @@ export function ProspectsTable() {
       />
 
       {adding ? <AddProspect onClose={() => setAdding(false)} /> : null}
+
+      <div className="mb-4">
+        <GoogleLookupAll prospects={data.prospects} />
+      </div>
 
       <Card className="mb-4 p-4">
         <div className="grid gap-3 md:grid-cols-6">

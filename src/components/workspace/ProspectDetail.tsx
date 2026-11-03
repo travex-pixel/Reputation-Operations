@@ -7,6 +7,7 @@ import { PROSPECT_STAGES, TRADES, type Prospect, type ProspectStage, type Resear
 import { log, today, useHydrated, useWorkspace, ws } from "@/lib/storage/store";
 import { Card, CardTitle, Chip, Empty, Field, Input, Meter, NumberInput, PageHeader, Select, StageChip, TextArea, WsButton, WsLink, fmtDate, fmtDateTime } from "./ui";
 import { PitchPanel } from "./PitchPanel";
+import { GoogleLookup } from "./GoogleLookup";
 
 const QUALITIES: ResponseQuality[] = ["personalised", "generic", "defensive", "helpful", "absent", "unknown"];
 const STATUSES: ResearchStatus[] = ["unverified", "partial", "verified"];
@@ -107,6 +108,7 @@ function ProspectEditor({ prospect }: { prospect: Prospect }) {
               ) : null}
             </p>
             {prospect.verificationNotes ? <p className="mt-2 rounded-sm bg-[#fdf1dc] px-3 py-2 text-[0.8125rem] text-stamp-ink">{prospect.verificationNotes}</p> : null}
+            <GoogleLookup prospect={prospect} onApplied={(patch) => setDraft((d) => ({ ...d, ...patch }))} />
           </Card>
 
           {/* Editable research */}

@@ -3,6 +3,8 @@
 import { getAiProvider } from "@/lib/ai";
 import type { AiStatus, DraftContext, DraftSuggestion, Insight, InsightInput, ReviewContext } from "@/lib/ai/provider";
 import type { Classification } from "@/lib/domain/types";
+import { lookupPlace, placesConfigured } from "@/lib/places/lookup";
+import type { PlacesLookup } from "@/lib/places/types";
 
 /**
  * Server actions: the only path from the workspace UI to a model.
@@ -35,4 +37,13 @@ export async function draftResponsesAction(ctx: DraftContext): Promise<DraftSugg
 export async function insightsAction(input: InsightInput): Promise<Insight[]> {
   if (!input.reviews.length) return [];
   return getAiProvider().insights({ ...input, reviews: input.reviews.slice(0, 80) });
+}
+
+/** Google Places lookup for one business. The key stays on the server. */
+export async function placesStatusAction(): Promise<{ configured: boolean }> {
+  return { configured: placesConfigured() };
+}
+
+export async function placesLookupAction(name: string, suburb: string): Promise<PlacesLookup> {
+  return lookupPlace(name.slice(0, 160), suburb.slice(0, 80));
 }
