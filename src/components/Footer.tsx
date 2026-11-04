@@ -11,8 +11,8 @@ export function Footer() {
           <div className="max-w-sm">
             <Wordmark />
             <p className="mt-4 text-small text-ink-soft">
-              {site.tagline} Human-led reputation management for trades, home services and property
-              managers across Australia. Based in {site.region}.
+              Human-led reputation management for trades, home services and property managers across Australia. Based in{" "}
+              {site.region}.
             </p>
           </div>
           <nav aria-label="Footer" className="grid content-start gap-2 text-small">

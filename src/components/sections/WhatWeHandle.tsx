@@ -5,7 +5,7 @@ import { serviceGroups } from "@/lib/site";
 export function WhatWeHandle() {
   return (
     <Section id="services" tone="raised" labelledBy="services-heading">
-      <SectionHeading id="services-heading" title="Everything taken care of." lede="The whole job, not a dashboard that leaves it to you." />
+      <SectionHeading id="services-heading" title="Everything taken care of." lede="The whole job, not a dashboard." />
       <div className="mt-10 grid gap-10 border-t rule pt-8 sm:grid-cols-2 md:mt-14 md:pt-10 lg:grid-cols-4 lg:gap-8">
         {serviceGroups.map((g, i) => (
           <Reveal key={g.name} delay={i * 80}>

@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { ButtonLink, TextLink } from "@/components/Button";
+import { ButtonLink } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
 import { site } from "@/lib/site";
 
@@ -13,7 +13,7 @@ export function Pricing() {
       <SectionHeading
         id="pricing-heading"
         title="Straightforward pricing. No lock-in."
-        lede="Month to month. No set-up fee. Cancel any time and your plan ends with the month you’ve paid for. Prices exclude GST."
+        lede="Month to month, no set-up fee, cancel any time. Prices exclude GST."
       />
 
       <ul className="mt-10 grid gap-5 md:mt-14 lg:grid-cols-3">
@@ -65,27 +65,20 @@ export function Pricing() {
         <ButtonLink href="/audit" size="lg" className="w-full">
           Get your free reputation audit
         </ButtonLink>
-        <p className="mt-3 text-center text-small text-ink-faint">The audit comes first. We’ll talk plans after.</p>
+        <p className="mt-3 text-center text-small text-ink-faint">The audit comes first.</p>
       </Reveal>
 
-      <Reveal className="mt-10 grid gap-6 rounded-md border rule bg-ground-sunken/70 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">
+      <Reveal className="mt-10 rounded-md border rule bg-ground-sunken/70 p-6 md:p-8">
         <div className="max-w-[36rem]">
           <h3 className="text-heading text-ink">{pilot.label}</h3>
           <p className="mt-2 text-body text-ink-soft">
-            For our first three customers: the Managed plan at {fmt(pilot.price)} {pilot.period}, no set-up fee, nothing
-            renewing automatically. Around day 25 we ask what you’d like to do next: continue at {fmt(managedPrice)} a month, or
-            stop. Either way the audit and report are yours to keep.
+            Our first three customers get the Managed plan at {fmt(pilot.price)} {pilot.period}. Nothing renews automatically:
+            around day 25 we ask whether you’d like to continue at {fmt(managedPrice)} a month or stop.
           </p>
           {pilot.places > 0 ? (
-            <p className="mt-3 text-small text-ink-faint">
-              {pilot.places === 1 ? "One place left." : `${pilot.places} places left.`} The audit comes first; pilot places are
-              offered after it.
-            </p>
+            <p className="mt-3 text-small text-ink-faint">{pilot.places === 1 ? "One place left." : `${pilot.places} places left.`} The audit comes first.</p>
           ) : null}
         </div>
-        <TextLink href="/audit" className="md:self-center">
-          Get your free reputation audit
-        </TextLink>
       </Reveal>
     </Section>
   );

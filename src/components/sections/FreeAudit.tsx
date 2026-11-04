@@ -3,9 +3,9 @@ import { ButtonLink } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
 
 const points = [
-  { title: "Where you stand", body: "Your rating, reply rate and most recent review next to three competitors near you." },
-  { title: "What customers are saying", body: "The themes in your reviews, good and bad, in plain words." },
-  { title: "What we’d fix first", body: "Three things, in order. Yours to act on with or without us." },
+  { title: "Where you stand", body: "Your rating, reply rate and newest review next to three competitors near you." },
+  { title: "What customers are saying", body: "The themes in your reviews, good and bad." },
+  { title: "What we’d fix first", body: "Three things, in order, with or without us." },
 ];
 
 /** A fictional audit, typeset like the one-page document a customer receives. */
@@ -53,8 +53,8 @@ function ReportPreview() {
         <p className="text-[0.75rem] uppercase tracking-[0.08em] text-ink-faint">What we’d fix first</p>
         <ol className="mt-3 grid gap-2.5 text-small text-ink-soft">
           <li className="grid grid-cols-[1.25rem_1fr] gap-2"><span className="tabular text-ink">1.</span>Reply to the four unanswered reviews, starting with the two-star from March.</li>
-          <li className="grid grid-cols-[1.25rem_1fr] gap-2"><span className="tabular text-ink">2.</span>Ask the last 20 completed jobs for a review. Your most recent is 14 months old.</li>
-          <li className="grid grid-cols-[1.25rem_1fr] gap-2"><span className="tabular text-ink">3.</span>Add after-hours contact details to your profile; three reviews mention not being able to reach you.</li>
+          <li className="grid grid-cols-[1.25rem_1fr] gap-2"><span className="tabular text-ink">2.</span>Ask the last 20 jobs for a review. Your newest is 14 months old.</li>
+          <li className="grid grid-cols-[1.25rem_1fr] gap-2"><span className="tabular text-ink">3.</span>Add after-hours contact details; three reviews mention not reaching you.</li>
         </ol>
       </div>
     </figure>
@@ -69,7 +69,7 @@ export function FreeAudit() {
           <SectionHeading
             id="audit-heading"
             title="See where your reputation stands."
-            lede="Send us your business name. Within two working days you’ll have one page that shows you three things."
+            lede="Send us your business name. Two working days later, one page shows you three things."
           />
           <ol className="mt-8 grid gap-6 border-t rule pt-8 md:mt-10">
             {points.map((p, i) => (
@@ -86,7 +86,7 @@ export function FreeAudit() {
             <ButtonLink href="/audit" size="lg" className="w-full sm:w-auto">
               Get your free reputation audit
             </ButtonLink>
-            <p className="mt-4 text-small text-ink-faint">No logins or access needed. We only use what’s already public.</p>
+            <p className="mt-4 text-small text-ink-faint">No logins needed. We only use what’s public.</p>
           </Reveal>
         </div>
         <Reveal delay={120}>

@@ -47,25 +47,15 @@ export const site = {
         name: "Essential",
         price: 299,
         summary: "Your reviews watched and answered.",
-        includes: [
-          "Google, hipages and Facebook checked every working day",
-          "Replies drafted in your voice, published with your approval",
-          "Negative reviews escalated to you the same working day",
-          "One-page monthly report",
-        ],
+        includes: ["Google, hipages and Facebook checked every working day", "Replies drafted and published with your approval", "One-page monthly report"],
         fit: "Owner-operators and small crews.",
       },
       {
         id: "managed",
         name: "Managed",
         price: 499,
-        summary: "Everything in Essential, plus winning customers back.",
-        includes: [
-          "Everything in Essential",
-          "Customer recovery: we prepare the call, you make it",
-          "Genuine review requests after completed jobs",
-          "Quarterly competitor check",
-        ],
+        summary: "Essential, plus winning customers back.",
+        includes: ["Everything in Essential", "Customer recovery: we prepare the call, you make it", "Review requests after every completed job"],
         fit: "Businesses with 3 to 15 staff and a steady flow of jobs.",
         featured: true,
       },
@@ -74,12 +64,7 @@ export const site = {
         name: "Premium",
         price: 799,
         summary: "For operators who win work on reputation.",
-        includes: [
-          "Everything in Managed",
-          "Monthly competitor and customer-feedback insights",
-          "Complaint and warranty follow-up coordination",
-          "Monthly 30-minute review call",
-        ],
+        includes: ["Everything in Managed", "Monthly competitor and customer-feedback insights", "Complaint and warranty follow-up, plus a monthly call"],
         fit: "Multi-crew or multi-location businesses.",
       },
     ],
@@ -103,20 +88,8 @@ export const trades = [
 ] as const;
 
 export const serviceGroups = [
-  {
-    name: "Review management",
-    items: ["Every review read by a person, every working day", "Replies drafted in your voice", "Nothing published without your approval"],
-  },
-  {
-    name: "Customer recovery",
-    items: ["Negative reviews escalated the same working day", "A short brief before you ring the customer", "Outcomes recorded and followed up"],
-  },
-  {
-    name: "Reputation growth",
-    items: ["Honest review requests after completed jobs", "Every nominated customer asked, not just the happy ones", "Working unsubscribe on every message"],
-  },
-  {
-    name: "Reporting and insights",
-    items: ["One-page report each month", "How you compare with three local competitors", "What customers keep praising and complaining about"],
-  },
+  { name: "Review management", items: ["Google, hipages and Facebook, every working day", "Nothing published without your approval"] },
+  { name: "Customer recovery", items: ["Bad reviews escalated the same day", "Outcomes recorded and followed up"] },
+  { name: "Reputation growth", items: ["Honest review requests after every job", "Every customer asked, not just the happy ones"] },
+  { name: "Reporting and insights", items: ["One page a month", "What customers keep praising and complaining about"] },
 ] as const;

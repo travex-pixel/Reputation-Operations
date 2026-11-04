@@ -4,7 +4,7 @@ import { Section, SectionHeading } from "@/components/Section";
 const points = [
   {
     title: "Reviews go unanswered",
-    body: "A two-star review with no reply is the first thing the next customer reads. Silence looks like you don’t care, even when you do.",
+    body: "A two-star review with no reply is the first thing the next customer reads. Silence looks like you don’t care.",
   },
   {
     title: "Complaints get ignored or handled badly",

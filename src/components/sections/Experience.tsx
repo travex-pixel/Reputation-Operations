@@ -10,22 +10,21 @@ const days = [
     day: "Tuesday evening",
     steps: [
       { t: "7:42 pm", text: "A two-star review lands. The customer took a day off and nobody came." },
-      { t: "Overnight", text: "Nothing needs to happen tonight. But the next customer who searches will see it, so the morning matters." },
+      { t: "Overnight", text: "Nothing needs to happen tonight. The morning matters." },
     ],
   },
   {
     day: "Wednesday",
     steps: [
-      { t: "By 8:05 am", text: "We’ve read it, texted you our read on it and a draft reply in your voice, and you’ve approved it from your phone. It’s on Google before most people have searched for a plumber." },
+      { t: "By 8:05 am", text: "We’ve read it, texted you our read and a draft reply, and you’ve approved it from your phone. It’s on Google before most people have searched for a plumber." },
       { t: "9:10 am", text: "You ring the customer. We’ve briefed you first, so the call is short and goes well." },
-      { t: "9:25 am", text: "Rebooked for Friday, call-out fee waived. We log what was agreed." },
+      { t: "9:25 am", text: "Rebooked for Friday, fee waived. We log what was agreed." },
     ],
   },
   {
     day: "Friday",
     steps: [
-      { t: "4:40 pm", text: "Job done. We send a short thank-you. Nothing asked for in return." },
-      { t: "Later", text: "Whatever she decides, the next customer sees a problem that was handled, not ignored." },
+      { t: "4:40 pm", text: "Job done. We send a short thank-you, nothing asked for in return. The next customer sees a problem that was handled." },
     ],
   },
 ];
@@ -36,7 +35,7 @@ export function Experience() {
       <SectionHeading
         id="experience-heading"
         title="Here’s what happens when something goes wrong."
-        lede="One missed booking, from the review landing on Tuesday night to the job being done on Friday. An illustrative example, not a real customer."
+        lede="One missed booking, Tuesday night to Friday. An illustrative example, not a real customer."
       />
 
       <ol className="mt-10 grid gap-10 md:mt-14 md:gap-12 lg:grid-cols-3 lg:gap-10">

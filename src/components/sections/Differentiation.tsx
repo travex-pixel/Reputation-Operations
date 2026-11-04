@@ -4,15 +4,15 @@ import { Section, SectionHeading } from "@/components/Section";
 const points = [
   {
     title: "Someone you can call",
-    body: "Someone looking after your reviews who picks up the phone. Not a ticket queue, not a chatbot.",
+    body: "Someone looking after your reviews who picks up the phone. Not a ticket queue.",
   },
   {
     title: "Replies in your voice",
-    body: "We learn how you talk to customers and write the way you would. You read and approve every word before it goes up.",
+    body: "We learn how you talk to customers and write the way you would. You approve every word.",
   },
   {
     title: "Problems handled, not notifications sent",
-    body: "Apps tell you a review arrived and leave the rest to you. We read it, work out what went wrong and bring you a plan.",
+    body: "Apps tell you a review arrived. We read it, work out what went wrong and bring you a plan.",
   },
 ];
 

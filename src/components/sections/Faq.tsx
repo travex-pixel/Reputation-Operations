@@ -8,7 +8,7 @@ export const faqs = [
   },
   {
     q: "Can you remove negative reviews?",
-    a: "Only when a review breaks Google’s own rules, for example it’s about a different business or the person was never a customer. We prepare the report and submit it with your approval; Google decides. Genuine negative reviews can’t be removed, and anyone who promises otherwise is misleading you. What we can do is make sure every one gets a calm reply and, where possible, a private fix. We never ask a customer to change a review.",
+    a: "Only when a review breaks Google’s own rules, for example it’s about a different business or the person was never a customer. We prepare the report with your approval; Google decides. Genuine negative reviews can’t be removed, and anyone who promises otherwise is misleading you. What we can do is make sure each one gets a calm reply and, where possible, a private fix. We never ask a customer to change a review.",
   },
   {
     q: "Do you need my password?",
@@ -20,7 +20,7 @@ export const faqs = [
   },
   {
     q: "What happens when a complaint arrives?",
-    a: "The same working day, a person reads it and works out what kind of problem it is. You get a text with the review, our read on it and a draft reply in your voice. If a call could win the customer back, we brief you first and log what was agreed.",
+    a: "The same working day, a person reads it and works out what kind of problem it is. You get a text with the review, our read on it and a draft reply. If a call could win the customer back, we brief you first.",
   },
   {
     q: "Can I cancel?",
@@ -28,7 +28,7 @@ export const faqs = [
   },
   {
     q: "What about my customers’ information?",
-    a: "We collect the minimum: a first name and one contact detail to send a review request you’ve asked for, and the public text of reviews. We never sell or share it, we strip it before any software sees it, and we delete it when you leave. Every request includes a working unsubscribe.",
+    a: "The minimum: a first name and one contact detail to send a review request you’ve asked for, and the public text of reviews. We never sell or share it, we strip it before any software sees it, and we delete it when you leave.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function Faq() {
         <SectionHeading
           id="faq-heading"
           title="Questions, answered plainly."
-          lede="If yours isn’t here, ask us on the call."
+          lede="If yours isn’t here, ask."
           className="lg:sticky lg:top-24 lg:self-start"
         />
         <div className="border-t rule">

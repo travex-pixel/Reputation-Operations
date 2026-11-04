@@ -26,13 +26,13 @@ const entries: Entry[] = [
     time: "7:30 am",
     who: "Reputrail",
     title: "Read by a person",
-    body: "Not a workmanship complaint. A missed booking, and a customer who still wants the job done.",
+    body: "A missed booking, not a workmanship complaint. The customer still wants the job done.",
   },
   {
     time: "7:38 am",
     who: "Reputrail",
     title: "Issue identified",
-    body: "Scheduling miss. Worth a call this morning, call-out fee waived.",
+    body: "Worth a call this morning. Call-out fee waived.",
   },
   {
     time: "7:50 am",
@@ -44,7 +44,7 @@ const entries: Entry[] = [
     time: "7:51 am",
     who: "Reputrail",
     title: "Sent to you for approval",
-    body: "One text. The review, our read on it, and the draft.",
+    body: "One text: the review, our read on it, the draft.",
   },
   {
     time: "8:05 am",

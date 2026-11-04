@@ -5,22 +5,22 @@ const steps = [
   {
     n: "01",
     title: "Understand your business",
-    body: "A 30-minute call. How you talk to customers, what you’ll offer when something goes wrong, who approves what. We write it down so every reply sounds like you.",
+    body: "A 30-minute call: how you talk to customers, what you’ll offer when something goes wrong, who approves what.",
   },
   {
     n: "02",
     title: "Monitor and respond",
-    body: "Every working day a person reads your new reviews on Google, hipages and Facebook, drafts replies in your voice and sends them to you to approve by text.",
+    body: "Every working day a person reads your new reviews, drafts the replies in your voice and sends them to you to approve by text.",
   },
   {
     n: "03",
     title: "Escalate and recover",
-    body: "Negative reviews reach you the same working day with our read on the problem and a suggested fix. If a call could win the customer back, we brief you before you ring.",
+    body: "Negative reviews reach you the same day with our read on the problem and a suggested fix. If a call could win the customer back, we brief you first.",
   },
   {
     n: "04",
     title: "Report and improve",
-    body: "One page a month. What came in, how it was handled, how you compare with three local competitors and what customers keep saying.",
+    body: "One page a month: what came in, how it was handled, and what customers keep saying.",
   },
 ];
 
@@ -31,7 +31,7 @@ export function HowItWorks() {
         <SectionHeading
           id="how-heading"
           title="We handle the reviews. You run the business."
-          lede="Four steps, done by people, with your approval at every point that matters."
+          lede="Four steps, done by people."
           className="lg:sticky lg:top-24 lg:self-start"
         />
         <ol className="border-t rule">
